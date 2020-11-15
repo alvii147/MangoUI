@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton
 from PyQt5.QtGui import QPalette
-from QSharpTools import SharpButton
+from QSharpTools import SharpButton, SharpCanvas
 
 class Window(QMainWindow):
     def __init__(self):
@@ -27,6 +27,10 @@ class Window(QMainWindow):
         self.normalButton = QPushButton(self)
         self.normalButton.move(200, 200)
         self.normalButton.setText("IDK")
+
+        self.can = SharpCanvas(self)
+        self.can.move(100, 100)
+        self.can.resize(200, 200)
 
         self.show()
 
