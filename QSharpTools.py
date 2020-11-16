@@ -14,7 +14,7 @@ def rgbTupleToString(rgbTuple):
     return "rgb(" + str(rgbTuple[0]) + ", " + str(rgbTuple[1]) + ", " + str(rgbTuple[2]) + ")"
 
 class SharpButton(QPushButton):
-    def __init__(self, parent = None, primaryColor = (0, 179, 60), secondaryColor = (204, 255, 221), pressed_border_color = (240, 240, 240), font_family = "Verdana", font_size = 13, font_weight = "normal", border_style = "solid", border_width = 2, border_radius = 0):
+    def __init__(self, parent = None, primaryColor = (0, 179, 60), secondaryColor = (204, 255, 221), parent_background_color = (240, 240, 240), font_family = "Verdana", font_size = 13, font_weight = "normal", border_style = "solid", border_width = 2, border_radius = 0):
         if parent:
             super().__init__(parent)
         else:
@@ -35,7 +35,7 @@ class SharpButton(QPushButton):
 
         self.border_style = border_style
         self.border_color = self.primaryColor
-        self.pressed_border_color = pressed_border_color
+        self.pressed_border_color = parent_background_color
         self.border_width = border_width
         self.border_radius = border_radius
 
@@ -81,7 +81,7 @@ class SharpButton(QPushButton):
         super().leaveEvent(event)
 
 class SharpCanvas(QWidget):
-    def __init__(self, parent = None, width = 200, height = 200, posX = 0, posY = 0):
+    def __init__(self, parent = None, width = 200, height = 200, background_color = (255, 247, 242), penColor = (0, 0, 0), penStroke = 5):
         if parent:
             super().__init__(parent)
         else:
@@ -89,19 +89,22 @@ class SharpCanvas(QWidget):
         self._path = QPainterPath()
         self.width = width
         self.height = height
-        self.posX = posX
-        self.posY = posY
+        self.posX = 0
+        self.posY = 0
+        self.background_color = background_color
+        self.penColor = penColor
+        self.penStroke = penStroke
 
     def paintEvent(self, event):
         painter = QPainter(self)
 
-        painter.setBrush(QBrush(QColor(255, 247, 242), Qt.SolidPattern))
+        painter.setBrush(QBrush(QColor(self.background_color[0], self.background_color[1], self.background_color[2]), Qt.SolidPattern))
         painter.setPen(QPen(Qt.NoPen))
         painter.drawRect(self.posX, self.posY, self.width, self.height)
 
         pen = QPen()
-        pen.setWidth(7)
-        pen.setColor(QColor(0, 0, 0))
+        pen.setWidth(self.penStroke)
+        pen.setColor(QColor(self.penColor[0], self.penColor[1], self.penColor[2]))
         pen.setStyle(Qt.SolidLine)
         painter.setPen(pen)
         painter.drawPath(self._path)
