@@ -1,20 +1,23 @@
-import re
-from PyQt5.QtWidgets import QMainWindow, QPushButton, QWidget
+from PyQt5.QtWidgets import QMainWindow, QPushButton, QLabel
 from PyQt5.QtCore import Qt, QVariantAnimation, QAbstractAnimation
-from PyQt5.QtGui import QCursor, QColor, QPainterPath, QPainter, QPen, QBrush
-
-def rgbStringToInt(rgbString):
-    search = re.search("^rgb\(\s*(\d*)\s*,\s*(\d*)\s*,\s*(\d*)\s*\)$", rgbString)
-    return int(search.group(1)), int(search.group(2)), int(search.group(3))
-
-def rgbIntToString(redInt, greenInt, blueInt):
-    return "rgb(" + str(redInt) + ", " + str(greenInt) + ", " + str(blueInt) + ")"
-
-def rgbTupleToString(rgbTuple):
-    return "rgb(" + str(rgbTuple[0]) + ", " + str(rgbTuple[1]) + ", " + str(rgbTuple[2]) + ")"
+from PyQt5.QtGui import QCursor, QColor, QPainterPath, QPainter, QPen, QBrush, QPixmap
+from utils.ColorOps import RGBAtuple_to_RGBAstr, RGBAint_to_RGBAtuple
 
 class SharpButton(QPushButton):
-    def __init__(self, parent = None, primaryColor = (0, 179, 60), secondaryColor = (204, 255, 221), parent_background_color = (240, 240, 240), font_family = "Verdana", font_size = 13, font_weight = "normal", border_style = "solid", border_width = 2, border_radius = 0):
+    def __init__(
+            self,
+            parent = None,
+            primaryColor = (0, 179, 60, 255),
+            secondaryColor = (204, 255, 221, 255),
+            parentBackgroundColor = (240, 240, 240, 255),
+            fontFamily = "Verdana",
+            fontSize = 13,
+            fontWeight = "normal",
+            borderStyle = "solid",
+            borderWidth = 1,
+            borderRadius = 2
+        ):
+
         if parent:
             super().__init__(parent)
         else:
@@ -22,52 +25,57 @@ class SharpButton(QPushButton):
         self.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.primaryColor = primaryColor
+        if len(self.primaryColor) == 3:
+            self.primaryColor += (255,)
+
         self.secondaryColor = secondaryColor
-        p1, p2, p3 = self.primaryColor
-        s1, s2, s3 = self.secondaryColor
-        self.color = self.primaryColor
-        self.background_color = self.secondaryColor
-        self.animation = QVariantAnimation(startValue = QColor(p1, p2, p3), endValue = QColor(s1, s2, s3), valueChanged = self.onHover, duration = 400)
+        if len(self.secondaryColor) == 3:
+            self.secondaryColor += (255,)
 
-        self.font_family = font_family
-        self.font_size = font_size
-        self.font_weight = font_weight
+        self.parentBackgroundColor = parentBackgroundColor
+        if len(self.parentBackgroundColor) == 3:
+            self.parentBackgroundColor += (255,)
 
-        self.border_style = border_style
-        self.border_color = self.primaryColor
-        self.pressed_border_color = parent_background_color
-        self.border_width = border_width
-        self.border_radius = border_radius
+        self.setupColors()
+
+        self.fontFamily = fontFamily
+        self.fontSize = fontSize
+        self.fontWeight = fontWeight
+
+        self.borderStyle = borderStyle
+        self.borderWidth = borderWidth
+        self.borderRadius = borderRadius
 
         self.renderStyleSheet()
 
     def renderStyleSheet(self):
-        self.styleSheet = "QPushButton{"
-        self.styleSheet += "color: " + rgbTupleToString(self.color) + ";"
-        self.styleSheet += "background-color: " + rgbTupleToString(self.background_color) + ";"
+        self.styleSheet = f"""
+            QPushButton {{
+                color: {RGBAtuple_to_RGBAstr(self.color)};
+                background-color: {RGBAtuple_to_RGBAstr(self.backgroundColor)};
 
-        self.styleSheet += "border-style: " + self.border_style + ";"
-        self.styleSheet += "border-color: " + rgbTupleToString(self.border_color) + ";"
-        self.styleSheet += "border-width: " + str(self.border_width) + "px" + ";"
-        self.styleSheet += "border-radius: " + str(self.border_radius) + "px" + ";"
+                border-style: {self.borderStyle};
+                border-color: {RGBAtuple_to_RGBAstr(self.borderColor)};
+                border-width: {str(self.borderWidth) + "px"};
+                border-radius: {str(self.borderRadius) + "px"};
 
-        self.styleSheet += "font-family: " + self.font_family + ";"
-        self.styleSheet += "font-size: " + str(self.font_size) + "px" + ";"
-        self.styleSheet += "font-weight: " + self.font_weight + ";"
-        self.styleSheet += "}"
+                font-family: {self.fontFamily};
+                font-size: {str(self.fontSize) + "px"};
+                font-weight: {self.fontWeight};
+            }}
 
-        self.styleSheet += "QPushButton::pressed{"
-        self.styleSheet += "border-color: " + rgbTupleToString(self.pressed_border_color) + ";"
-        self.styleSheet += "}"
-
+            QPushButton::pressed {{
+                border-color: {RGBAtuple_to_RGBAstr(self.parentBackgroundColor)};
+            }}
+        """
         self.setStyleSheet(self.styleSheet)
-    
+
     def onHover(self, color):
         if self.animation.direction() == QAbstractAnimation.Forward:
             self.color = self.primaryColor
         else:
             self.color = self.secondaryColor
-        self.background_color = (color.red(), color.green(), color.blue())
+        self.backgroundColor = RGBAint_to_RGBAtuple(color.rgba())
         self.renderStyleSheet()
 
     def enterEvent(self, event):
@@ -80,43 +88,163 @@ class SharpButton(QPushButton):
         self.animation.start()
         super().leaveEvent(event)
 
-class SharpCanvas(QWidget):
-    def __init__(self, parent = None, width = 200, height = 200, background_color = (255, 247, 242), penColor = (0, 0, 0), penStroke = 5):
+    def setupColors(self):
+        self.color = self.primaryColor
+        self.backgroundColor = self.secondaryColor
+        self.animation = QVariantAnimation(
+            startValue = QColor(*self.primaryColor),
+            endValue = QColor(*self.secondaryColor),
+            valueChanged = self.onHover, duration = 400
+        )
+        self.borderColor = self.primaryColor
+
+    def setPrimaryColor(self, color):
+        if isinstance(color, tuple):
+            self.primaryColor = color
+        elif isinstance(color, QColor):
+            self.primaryColor = RGBAint_to_RGBAtuple(color.rgba())
+        else:
+            return False
+
+        self.setupColors()
+        self.renderStyleSheet()
+
+        return True
+
+    def setSecondaryColor(self, color):
+        if isinstance(color, tuple):
+            self.secondaryColor = color
+        elif isinstance(color, QColor):
+            self.secondaryColor = RGBAint_to_RGBAtuple(color.rgba())
+        else:
+            return False
+
+        self.setupColors()
+        self.renderStyleSheet()
+
+        return True
+
+    def setParentBackgroundColor(self, color):
+        if isinstance(color, tuple):
+            self.parentBackgroundColor = color
+        elif isinstance(color, QColor):
+            self.parentBackgroundColor = RGBAint_to_RGBAtuple(color.rgba())
+        else:
+            return False
+
+        self.renderStyleSheet()
+
+        return True
+
+    def setFont(self, fontFamily = None, fontSize = None, fontWeight = None):
+        if fontFamily != None:
+            self.fontFamily = fontFamily
+
+        if fontSize != None:
+            self.fontSize = fontSize
+
+        if fontWeight != None:
+            self.fontWeight = fontWeight
+
+        self.renderStyleSheet()
+
+        return True
+
+    def setBorder(self, borderStyle = None, borderWidth = None, borderRadius = None):
+        if borderStyle != None:
+            self.borderStyle = borderStyle
+
+        if borderWidth != None:
+            self.borderWidth = borderWidth
+
+        if borderRadius != None:
+            self.borderRadius = borderRadius
+
+        self.renderStyleSheet()
+
+        return True
+
+class SharpCanvas(QLabel):
+    def __init__(
+            self,
+            parent = None,
+            width = 200,
+            height = 200,
+            penColor = (25, 25, 25),
+            canvasColor = (255, 247, 242),
+            strokeStyle = Qt.SolidLine,
+            strokeWidth = 3
+        ):
+
         if parent:
             super().__init__(parent)
         else:
             super().__init__()
-        self._path = QPainterPath()
         self.width = width
         self.height = height
-        self.posX = 0
-        self.posY = 0
-        self.background_color = background_color
-        self.penColor = penColor
-        self.penStroke = penStroke
+        self.color = penColor
+        self.backgroundColor = canvasColor
+        self.strokeStyle = strokeStyle
+        self.strokeWidth = strokeWidth
 
-    def paintEvent(self, event):
-        painter = QPainter(self)
+        self.xCache = None
+        self.yCache = None
+        self.setupPixmap()
+        self.renderStyleSheet()
 
-        painter.setBrush(QBrush(QColor(self.background_color[0], self.background_color[1], self.background_color[2]), Qt.SolidPattern))
-        painter.setPen(QPen(Qt.NoPen))
-        painter.drawRect(self.posX, self.posY, self.width, self.height)
-
-        pen = QPen()
-        pen.setWidth(self.penStroke)
-        pen.setColor(QColor(self.penColor[0], self.penColor[1], self.penColor[2]))
-        pen.setStyle(Qt.SolidLine)
-        painter.setPen(pen)
-        painter.drawPath(self._path)
-    
-    def mousePressEvent(self, event):
-        self._path.moveTo(event.pos())
-        self.update()
-    
     def mouseMoveEvent(self, event):
-        self._path.lineTo(event.pos())
-        self.update()
-    
-    def newPath(self):
-        self._path = QPainterPath()
-        self.update()
+        if self.xCache == None:
+            self.xCache = event.x()
+            self.yCache = event.y()
+        else:
+            painter = QPainter(self.pixmap())
+            pen = painter.pen()
+            pen.setWidth(self.strokeWidth)
+            pen.setColor(QColor(*self.color))
+            pen.setStyle(self.strokeStyle)
+            painter.setPen(pen)
+            painter.drawLine(self.xCache, self.yCache, event.x(), event.y())
+            painter.end()
+            self.update()
+            self.xCache = event.x()
+            self.yCache = event.y()
+
+    def mouseReleaseEvent(self, event):
+        self.xCache = None
+        self.yCache = None
+
+    def setPenColor(self, color):
+        if isinstance(color, tuple):
+            self.color = color
+        elif isinstance(color, QColor):
+            self.color = RGBAint_to_RGBAtuple(color.rgba())
+        else:
+            return False
+
+    def setupPixmap(self):
+        pixmap = QPixmap(self.frameGeometry().width(), self.frameGeometry().height())
+        pixmap.fill(QColor(*self.backgroundColor))
+        self.setPixmap(pixmap)
+
+    def renderStyleSheet(self):
+        self.styleSheet = f"""
+            QLabel {{
+                border-style: solid;
+                border-color: black;
+                border-width: 1px;
+            }}
+        """
+        self.setStyleSheet(self.styleSheet)
+
+    def resize(self, width, height):
+        super().resize(width, height)
+        self.setupPixmap()
+
+    def clearCanvas(self):
+        pixmap = self.pixmap()
+        pixmap.fill(QColor(*self.backgroundColor))
+        self.setPixmap(pixmap)
+
+    def saveCanvas(self, dest):
+        pixmap = self.pixmap()
+        pixmap.save(dest)
