@@ -33,4 +33,4 @@ myWin.show()
 sys.exit(app.exec_())
 ```
 
-![Sharp Button Recording](SharpButtonRecording.gif)
+![Sharp Button Recording](img/SharpButtonRecording.gif)
