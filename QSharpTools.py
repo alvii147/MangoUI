@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QPushButton, QLabel
 from PyQt5.QtCore import Qt, QVariantAnimation, QAbstractAnimation
 from PyQt5.QtGui import QCursor, QColor, QPainterPath, QPainter, QPen, QBrush, QPixmap
-from utils.ColorOps import RGBAtuple_to_RGBAstr, RGBAint_to_RGBAtuple
+from utils.ColorOps import to_RGBAtuple
 
 class SharpButton(QPushButton):
     def __init__(
@@ -11,7 +11,7 @@ class SharpButton(QPushButton):
             secondaryColor = (204, 255, 221, 255),
             parentBackgroundColor = (240, 240, 240, 255),
             fontFamily = "Verdana",
-            fontSize = 13,
+            fontSize = 8,
             fontWeight = "normal",
             borderStyle = "solid",
             borderWidth = 1,
@@ -22,19 +22,12 @@ class SharpButton(QPushButton):
             super().__init__(parent)
         else:
             super().__init__()
+
         self.setCursor(QCursor(Qt.PointingHandCursor))
 
-        self.primaryColor = primaryColor
-        if len(self.primaryColor) == 3:
-            self.primaryColor += (255,)
-
-        self.secondaryColor = secondaryColor
-        if len(self.secondaryColor) == 3:
-            self.secondaryColor += (255,)
-
-        self.parentBackgroundColor = parentBackgroundColor
-        if len(self.parentBackgroundColor) == 3:
-            self.parentBackgroundColor += (255,)
+        self.primaryColor = to_RGBAtuple(primaryColor)
+        self.secondaryColor = to_RGBAtuple(secondaryColor)
+        self.parentBackgroundColor = to_RGBAtuple(parentBackgroundColor)
 
         self.setupColors()
 
@@ -51,21 +44,21 @@ class SharpButton(QPushButton):
     def renderStyleSheet(self):
         self.styleSheet = f"""
             QPushButton {{
-                color: {RGBAtuple_to_RGBAstr(self.color)};
-                background-color: {RGBAtuple_to_RGBAstr(self.backgroundColor)};
+                color: rgba{to_RGBAtuple(self.color)};
+                background-color: rgba{to_RGBAtuple(self.backgroundColor)};
 
-                border-style: {self.borderStyle};
-                border-color: {RGBAtuple_to_RGBAstr(self.borderColor)};
-                border-width: {str(self.borderWidth) + "px"};
-                border-radius: {str(self.borderRadius) + "px"};
+                border-style: {str(self.borderStyle)};
+                border-color: rgba{to_RGBAtuple(self.borderColor)};
+                border-width: {str(self.borderWidth)}px;
+                border-radius: {str(self.borderRadius)}px;
 
-                font-family: {self.fontFamily};
-                font-size: {str(self.fontSize) + "px"};
+                font-family: {str(self.fontFamily)};
+                font-size: {str(self.fontSize)}pt;
                 font-weight: {self.fontWeight};
             }}
 
             QPushButton::pressed {{
-                border-color: {RGBAtuple_to_RGBAstr(self.parentBackgroundColor)};
+                border-color: rgba{to_RGBAtuple(self.parentBackgroundColor)};
             }}
         """
         self.setStyleSheet(self.styleSheet)
@@ -75,7 +68,7 @@ class SharpButton(QPushButton):
             self.color = self.primaryColor
         else:
             self.color = self.secondaryColor
-        self.backgroundColor = RGBAint_to_RGBAtuple(color.rgba())
+        self.backgroundColor = to_RGBAtuple(color)
         self.renderStyleSheet()
 
     def enterEvent(self, event):
@@ -99,39 +92,21 @@ class SharpButton(QPushButton):
         self.borderColor = self.primaryColor
 
     def setPrimaryColor(self, color):
-        if isinstance(color, tuple):
-            self.primaryColor = color
-        elif isinstance(color, QColor):
-            self.primaryColor = RGBAint_to_RGBAtuple(color.rgba())
-        else:
-            return False
-
+        self.primaryColor = to_RGBAtuple(color)
         self.setupColors()
         self.renderStyleSheet()
 
         return True
 
     def setSecondaryColor(self, color):
-        if isinstance(color, tuple):
-            self.secondaryColor = color
-        elif isinstance(color, QColor):
-            self.secondaryColor = RGBAint_to_RGBAtuple(color.rgba())
-        else:
-            return False
-
+        self.secondaryColor = to_RGBAtuple(color)
         self.setupColors()
         self.renderStyleSheet()
 
         return True
 
     def setParentBackgroundColor(self, color):
-        if isinstance(color, tuple):
-            self.parentBackgroundColor = color
-        elif isinstance(color, QColor):
-            self.parentBackgroundColor = RGBAint_to_RGBAtuple(color.rgba())
-        else:
-            return False
-
+        self.parentBackgroundColor = to_RGBAtuple(color)
         self.renderStyleSheet()
 
         return True
@@ -170,22 +145,32 @@ class SharpCanvas(QLabel):
             parent = None,
             width = 200,
             height = 200,
-            penColor = (25, 25, 25),
-            canvasColor = (255, 247, 242),
+            penColor = (25, 25, 25, 255),
+            canvasColor = (255, 247, 242, 255),
             strokeStyle = Qt.SolidLine,
-            strokeWidth = 3
+            strokeWidth = 3,
+            borderStyle = "solid",
+            borderColor = (0, 0, 0, 255),
+            borderWidth = 1
         ):
 
         if parent:
             super().__init__(parent)
         else:
             super().__init__()
+
         self.width = width
         self.height = height
+
         self.color = penColor
         self.backgroundColor = canvasColor
+    
         self.strokeStyle = strokeStyle
         self.strokeWidth = strokeWidth
+
+        self.borderStyle = borderStyle
+        self.borderColor = borderColor
+        self.borderWidth = borderWidth
 
         self.xCache = None
         self.yCache = None
@@ -217,7 +202,7 @@ class SharpCanvas(QLabel):
         if isinstance(color, tuple):
             self.color = color
         elif isinstance(color, QColor):
-            self.color = RGBAint_to_RGBAtuple(color.rgba())
+            self.color = to_RGBAtuple(color)
         else:
             return False
 
@@ -229,22 +214,25 @@ class SharpCanvas(QLabel):
     def renderStyleSheet(self):
         self.styleSheet = f"""
             QLabel {{
-                border-style: solid;
-                border-color: black;
-                border-width: 1px;
+                border-style: {str(self.borderStyle)};
+                border-color: rgba{to_RGBAtuple(self.borderColor)};
+                border-width: {str(self.borderWidth)}px;
             }}
         """
         self.setStyleSheet(self.styleSheet)
 
     def resize(self, width, height):
-        super().resize(width, height)
+        ret = super().resize(width, height)
         self.setupPixmap()
+        return ret
 
     def clearCanvas(self):
         pixmap = self.pixmap()
         pixmap.fill(QColor(*self.backgroundColor))
         self.setPixmap(pixmap)
+        return True
 
     def saveCanvas(self, dest):
         pixmap = self.pixmap()
         pixmap.save(dest)
+        return True
