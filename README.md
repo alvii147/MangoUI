@@ -69,19 +69,19 @@ if __name__ == "__main__":
 
 ### Constructors & Methods
 
-[SharpButton()](####SharpButton())
+[SharpButton()](#SharpButton())
 
-[setPrimaryColor()](####setPrimaryColor())
+[setPrimaryColor()](#setPrimaryColor())
 
-[setSecondaryColor()](####setSecondaryColor())
+[setSecondaryColor()](#setSecondaryColor())
 
-[setParentBackgroundColor()](####setParentBackgroundColor())
+[setParentBackgroundColor()](#setParentBackgroundColor())
 
-[setFont](####setFont)
+[setFont](#setFont)
 
-[setBorder](####setBorder)
+[setBorder](#setBorder)
 
-#### SharpButton()
+### SharpButton()
 
 ```python
 SharpButton(parent = None,
@@ -120,7 +120,7 @@ SharpButton(parent = None,
 - *borderRadius*
   - integer representing border radius
 
-#### setPrimaryColor()
+### setPrimaryColor()
 
 **Return type:** bool
 
@@ -130,7 +130,7 @@ SharpButton(parent = None,
 
 **Description:** set primary color.
 
-#### setSecondaryColor()
+### setSecondaryColor()
 
 **Return type:** bool
 
@@ -140,7 +140,7 @@ SharpButton(parent = None,
 
 **Description:** set secondary color.
 
-#### setParentBackgroundColor()
+### setParentBackgroundColor()
 
 **Return type:** bool
 
@@ -150,7 +150,7 @@ SharpButton(parent = None,
 
 **Description:** set background color of parent widget.
 
-#### setFont()
+### setFont()
 
 **Return type:** bool
 
@@ -162,7 +162,7 @@ SharpButton(parent = None,
 
 **Description:** set font properties.
 
-#### setBorder()
+### setBorder()
 
 **Return type:** bool
 
