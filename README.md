@@ -1,3 +1,5 @@
+![QSharpTools Logo](img/QSharpToolsLogo.png)
+
 # Overview
 
 **QSharpTools** is a library for **PyQt5** that includes better styled widgets for sharper desktop UI development.
@@ -93,7 +95,7 @@ SharpButton(parent = None,
             borderWidth = 1,
             borderRadius = 2)
 ```
-![QSharpTools Logo](QSharpToolsLogo.png)
+
 **Parameters:**
 
 - *primaryColor:*
