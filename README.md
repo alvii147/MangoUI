@@ -1,14 +1,12 @@
-# QSharpTools
-
-## Overview
+# Overview
 
 **QSharpTools** is a library for **PyQt5** that includes better styled widgets for sharper desktop UI development.
 
-## SharpButton
+# SharpButton
 
 **SharpButton** an inherited class of **QPushButton,** styled using **QSS** and **QVariantAnimation.**
 
-### Example Use
+## Example Use
 
 ```python
 import sys
@@ -67,7 +65,7 @@ if __name__ == "__main__":
 ```
 <img src="img/SharpButtonRecording.gif" alt="Sharp Button Recording" width="200"/>
 
-### Constructors & Methods
+## Constructors & Methods
 
 [SharpButton()](#SharpButton)
 
@@ -81,7 +79,7 @@ if __name__ == "__main__":
 
 [setBorder](#setBorder)
 
-### SharpButton()
+## SharpButton()
 
 ```python
 SharpButton(parent = None,
@@ -95,7 +93,7 @@ SharpButton(parent = None,
             borderWidth = 1,
             borderRadius = 2)
 ```
-
+![QSharpTools Logo](QSharpToolsLogo.png)
 **Parameters:**
 
 - *primaryColor:*
@@ -120,7 +118,7 @@ SharpButton(parent = None,
 - *borderRadius*
   - integer representing border radius
 
-### setPrimaryColor()
+## setPrimaryColor()
 
 **Return type:** bool
 
@@ -130,7 +128,7 @@ SharpButton(parent = None,
 
 **Description:** set primary color.
 
-### setSecondaryColor()
+## setSecondaryColor()
 
 **Return type:** bool
 
@@ -140,7 +138,7 @@ SharpButton(parent = None,
 
 **Description:** set secondary color.
 
-### setParentBackgroundColor()
+## setParentBackgroundColor()
 
 **Return type:** bool
 
@@ -150,7 +148,7 @@ SharpButton(parent = None,
 
 **Description:** set background color of parent widget.
 
-### setFont()
+## setFont()
 
 **Return type:** bool
 
@@ -162,7 +160,7 @@ SharpButton(parent = None,
 
 **Description:** set font properties.
 
-### setBorder()
+## setBorder()
 
 **Return type:** bool
 
