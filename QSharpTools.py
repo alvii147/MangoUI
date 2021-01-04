@@ -221,20 +221,30 @@ class SharpCanvas(QLabel):
         return ret
 
     def setPenColor(self, color):
-        if isinstance(color, tuple):
-            self.color = color
-        elif isinstance(color, QColor):
-            self.color = to_RGBAtuple(color)
-        else:
-            return False
+        self.color = to_RGBAtuple(color)
+        return True
 
-    def clearCanvas(self):
-        pixmap = self.pixmap()
-        pixmap.fill(QColor(*self.backgroundColor))
-        self.setPixmap(pixmap)
+    def setBorder(self, borderStyle = None, borderColor = None, borderWidth = None):
+        if borderStyle != None:
+            self.borderStyle = borderStyle
+
+        if borderColor != None:
+            self.borderColor = borderColor
+
+        if borderWidth != None:
+            self.borderWidth = borderWidth
+
+        self.renderStyleSheet()
+
         return True
 
     def saveCanvas(self, dest):
         pixmap = self.pixmap()
         pixmap.save(dest)
+        return True
+
+    def clearCanvas(self):
+        pixmap = self.pixmap()
+        pixmap.fill(QColor(*self.backgroundColor))
+        self.setPixmap(pixmap)
         return True

@@ -69,12 +69,12 @@ if __name__ == "__main__":
 
 ## Constructors & Methods
 
-- [SharpButton()](#SharpButton)
-- [setPrimaryColor()](#setPrimaryColor)
-- [setSecondaryColor()](#setSecondaryColor)
-- [setParentBackgroundColor()](#setParentBackgroundColor)
-- [setFont()](#setFont)
-- [setBorder()](#setBorder)
+- [SharpButton()](#sharpbutton-1)
+- [setPrimaryColor()](#setprimarycolor)
+- [setSecondaryColor()](#setsecondarycolor)
+- [setParentBackgroundColor()](#setparentbackgroundcolor)
+- [setFont()](#setfont)
+- [setBorder()](#setborder)
 
 ## SharpButton()
 
@@ -167,7 +167,7 @@ SharpButton(parent = None,
 - *borderWidth = None:* integer representing border width
 - *borderRadius = None:* integer representing border radius
 
-**Description:** set font properties.
+**Description:** set border properties.
 
 # SharpCanvas
 
@@ -217,5 +217,88 @@ if __name__ == "__main__":
 
 <img src="img/SharpCanvasRecording.gif" alt="Sharp Canvas Recording" width="200"/>
 
-## setPrimaryColor
+## Constructors & Methods
 
+- [SharpCanvas()](#sharpcanvas-1)
+- [setPenColor()](#setpencolor)
+- [setBorder()](#setborder-1)
+- [saveCanvas()](#savecanvas)
+- [clearCanvas()](#clearcanvas)
+
+## SharpCanvas()
+
+```python
+SharpButton(parent = None,
+            width = 200,
+            height = 200,
+            penColor = (25, 25, 25, 255),
+            canvasColor = (255, 247, 242, 255),
+            strokeStyle = Qt.SolidLine,
+            strokeWidth = 3,
+            borderStyle = "solid",
+            borderColor = (0, 0, 0, 255),
+            borderWidth = 1)
+```
+
+**Parameters:**
+
+- *width:*
+  - Width of canvas
+- *height:*
+  - Height of canvas
+- *penColor:*
+  - [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+  - Color of pen
+- *canvasColor:*
+  - [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+  - Background color of canvas
+- *strokeStyle:*
+  - [QPenStyle](https://doc.qt.io/qtforpython-5.12/PySide2/QtGui/QPen.html#pen-style) object
+  - Line style of pen stroke
+- *strokeWidth:*
+  - integer representing pen stroke width
+- *borderStyle:*
+  - string representing border style
+- *borderColor*
+  - [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+  - Color of canvas border
+- *borderWidth:*
+  - integer representing border width
+
+## setPenColor()
+
+**Return type:** bool
+
+**Parameters:**
+
+- *color:* [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+
+**Description:** set pen color.
+
+## setBorder()
+
+**Return type:** bool
+
+**Parameters:**
+
+- *borderStyle = None:* string representing border style
+- *borderColor = None:* [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string, representing canvas border color
+- *borderWidth = None:* integer representing border width
+
+**Description:** set border properties.
+
+## saveCanvas()
+
+**Return type:** bool
+
+**Parameters:**
+
+- *dest:* string representing file destination
+
+**Description:** save canvas to image file.
+
+## clearCanvas()
+
+**Return type:** bool
+
+**Description:** clear canvas drawing.
