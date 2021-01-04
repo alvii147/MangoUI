@@ -69,17 +69,12 @@ if __name__ == "__main__":
 
 ## Constructors & Methods
 
-[SharpButton()](#SharpButton)
-
-[setPrimaryColor()](#setPrimaryColor)
-
-[setSecondaryColor()](#setSecondaryColor)
-
-[setParentBackgroundColor()](#setParentBackgroundColor)
-
-[setFont](#setFont)
-
-[setBorder](#setBorder)
+- [SharpButton()](#SharpButton)
+- [setPrimaryColor()](#setPrimaryColor)
+- [setSecondaryColor()](#setSecondaryColor)
+- [setParentBackgroundColor()](#setParentBackgroundColor)
+- [setFont()](#setFont)
+- [setBorder()](#setBorder)
 
 ## SharpButton()
 
@@ -221,3 +216,6 @@ if __name__ == "__main__":
 ```
 
 <img src="img/SharpCanvasRecording.gif" alt="Sharp Canvas Recording" width="200"/>
+
+## setPrimaryColor
+
