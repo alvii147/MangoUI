@@ -55,6 +55,7 @@ class SharpButton(QPushButton):
                 font-family: {str(self.fontFamily)};
                 font-size: {str(self.fontSize)}pt;
                 font-weight: {self.fontWeight};
+                padding: 5px;
             }}
 
             QPushButton::pressed {{
@@ -207,7 +208,7 @@ class SharpCanvas(QLabel):
             return False
 
     def setupPixmap(self):
-        pixmap = QPixmap(self.frameGeometry().width(), self.frameGeometry().height())
+        pixmap = QPixmap(self.width, self.height)
         pixmap.fill(QColor(*self.backgroundColor))
         self.setPixmap(pixmap)
 
