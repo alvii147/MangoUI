@@ -65,8 +65,7 @@ if __name__ == "__main__":
     myWin = Window()
     sys.exit(app.exec_())
 ```
-
-![Sharp Button Recording](img/SharpButtonRecording.gif)
+<img src="img/SharpButtonRecording.gif" alt="Sharp Button Recording" width="200"/>
 
 ### Constructors & Methods
 
