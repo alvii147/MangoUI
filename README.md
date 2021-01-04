@@ -1,4 +1,4 @@
-![QSharpTools Logo](img/QSharpToolsLogo.png)
+![QSharpTools Logo](img/QSharpToolsLogoLight.png)
 
 # Overview
 
