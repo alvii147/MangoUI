@@ -69,13 +69,13 @@ if __name__ == "__main__":
 
 ### Constructors & Methods
 
-[SharpButton()](#SharpButton())
+[SharpButton()](#SharpButton)
 
-[setPrimaryColor()](#setPrimaryColor())
+[setPrimaryColor()](#setPrimaryColor)
 
-[setSecondaryColor()](#setSecondaryColor())
+[setSecondaryColor()](#setSecondaryColor)
 
-[setParentBackgroundColor()](#setParentBackgroundColor())
+[setParentBackgroundColor()](#setParentBackgroundColor)
 
 [setFont](#setFont)
 
