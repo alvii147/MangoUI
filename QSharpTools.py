@@ -175,6 +175,7 @@ class SharpCanvas(QLabel):
 
         self.xCache = None
         self.yCache = None
+        self.setFixedSize(self.width, self.height)
         self.setupPixmap()
         self.renderStyleSheet()
 
@@ -199,14 +200,6 @@ class SharpCanvas(QLabel):
         self.xCache = None
         self.yCache = None
 
-    def setPenColor(self, color):
-        if isinstance(color, tuple):
-            self.color = color
-        elif isinstance(color, QColor):
-            self.color = to_RGBAtuple(color)
-        else:
-            return False
-
     def setupPixmap(self):
         pixmap = QPixmap(self.width, self.height)
         pixmap.fill(QColor(*self.backgroundColor))
@@ -226,6 +219,14 @@ class SharpCanvas(QLabel):
         ret = super().resize(width, height)
         self.setupPixmap()
         return ret
+
+    def setPenColor(self, color):
+        if isinstance(color, tuple):
+            self.color = color
+        elif isinstance(color, QColor):
+            self.color = to_RGBAtuple(color)
+        else:
+            return False
 
     def clearCanvas(self):
         pixmap = self.pixmap()

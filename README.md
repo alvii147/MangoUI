@@ -173,3 +173,51 @@ SharpButton(parent = None,
 - *borderRadius = None:* integer representing border radius
 
 **Description:** set font properties.
+
+# SharpCanvas
+
+**SharpCanvas** an inherited class of **QLabel** with a null **QPixmap.** Using **QPainter,** **SharpCanvas** allows the user to paint on the canvas.
+
+## Example Use
+
+```python
+import sys
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QLabel
+from QSharpTools import SharpCanvas
+
+class Window(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.width = 150
+        self.height = 150
+        self.xPos = 500
+        self.yPos = 500
+        self.initUI()
+
+    def initUI(self):
+        self.setGeometry(self.xPos, self.yPos, self.width, self.height)
+        self.vBoxLayout = QVBoxLayout()
+
+        self.canvas = SharpCanvas(
+            width = 150,
+            height = 150,
+            penColor = (49, 1, 64),
+            canvasColor = (255, 175, 94),
+            strokeWidth = 5,
+            borderWidth = 2,
+            borderColor = (49, 1, 64)
+        )
+        self.vBoxLayout.addWidget(self.canvas)
+
+        self.centralWidget = QWidget(self)
+        self.centralWidget.setLayout(self.vBoxLayout)
+        self.setCentralWidget(self.centralWidget)
+        self.show()
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    myWin = Window()
+    sys.exit(app.exec_())
+```
+
+<img src="img/SharpCanvasRecording.gif" alt="Sharp Canvas Recording" width="200"/>
