@@ -178,6 +178,7 @@ SharpButton(parent = None,
 ```python
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QLabel
+from PyQt5.QtCore import Qt
 from QSharpTools import SharpCanvas
 
 class Window(QMainWindow):
@@ -202,7 +203,7 @@ class Window(QMainWindow):
             borderWidth = 2,
             borderColor = (49, 1, 64)
         )
-        self.vBoxLayout.addWidget(self.canvas)
+        self.vBoxLayout.addWidget(self.canvas, alignment = Qt.AlignCenter)
 
         self.centralWidget = QWidget(self)
         self.centralWidget.setLayout(self.vBoxLayout)
