@@ -229,7 +229,7 @@ if __name__ == "__main__":
 ## SharpCanvas()
 
 ```python
-SharpButton(parent = None,
+SharpCanvas(parent = None,
             width = 200,
             height = 200,
             penColor = (25, 25, 25, 255),
