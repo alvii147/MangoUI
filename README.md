@@ -1,19 +1,19 @@
-![QSharpTools Logo](img/QSharpToolsLogoLight.png)
+![QSharpTools Logo](img/MangoUILogoLight.png)
 
 # Overview
 
-**QSharpTools** is a library for **PyQt5** that includes better styled widgets for sharper desktop UI development.
+**Mango.UI** is a library for **PyQt5** that includes sharper-looking custom-styled widgets for better desktop UI development.
 
-# SharpButton
+# Button
 
-**SharpButton** an inherited class of **QPushButton,** styled using **QSS** and **QVariantAnimation.**
+**Button** an inherited class of **QPushButton,** styled using **QSS** and **QVariantAnimation.**
 
 ## Example Use
 
 ```python
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout
-from QSharpTools import SharpButton
+from MangoUI import Button
 
 class Window(QMainWindow):
     def __init__(self):
@@ -28,31 +28,29 @@ class Window(QMainWindow):
         self.setGeometry(self.xPos, self.yPos, self.width, self.height)
         self.vBoxLayout = QVBoxLayout()
 
-        self.button = SharpButton(
-            primaryColor  = (49, 1, 64),
-            secondaryColor = (255, 175, 94),
-            borderWidth = 2,
-            borderRadius = 6
-        )
-        self.button.setText("SharpButton")
+        self.button = Button(
+			borderWidth = 1,
+			borderRadius = 4,
+		)
+        self.button.setText('Default Button')
         self.vBoxLayout.addWidget(self.button)
 
-        self.blueButton = SharpButton(
+        self.blueButton = Button(
             primaryColor  = (17, 46, 133),
             secondaryColor = (202, 209, 232),
-            borderWidth = 2,
-            borderRadius = 6
+            borderWidth = 1,
+            borderRadius = 4,
         )
-        self.blueButton.setText("Blue Button")
+        self.blueButton.setText('Blue Button')
         self.vBoxLayout.addWidget(self.blueButton)
 
-        self.redButton = SharpButton(
+        self.redButton = Button(
             primaryColor  = (171, 3, 3),
             secondaryColor = (247, 173, 173),
-            borderWidth = 2,
-            borderRadius = 6
+            borderWidth = 1,
+            borderRadius = 4,
         )
-        self.redButton.setText("Red Button")
+        self.redButton.setText('Red Button')
         self.vBoxLayout.addWidget(self.redButton)
 
         self.centralWidget = QWidget(self)
@@ -60,35 +58,35 @@ class Window(QMainWindow):
         self.setCentralWidget(self.centralWidget)
         self.show()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWin = Window()
     sys.exit(app.exec_())
 ```
-<img src="img/SharpButtonRecording.gif" alt="Sharp Button Recording" width="200"/>
+<img src="img/ButtonExample.gif" alt="ButtonExample" width="200"/>
 
 ## Constructors & Methods
 
-- [SharpButton()](#sharpbutton-1)
+- [Button()](#button-1)
 - [setPrimaryColor()](#setprimarycolor)
 - [setSecondaryColor()](#setsecondarycolor)
 - [setParentBackgroundColor()](#setparentbackgroundcolor)
 - [setFont()](#setfont)
 - [setBorder()](#setborder)
 
-## SharpButton()
+## Button()
 
 ```python
-SharpButton(parent = None,
-            primaryColor = (0, 179, 60, 255),
-            secondaryColor = (204, 255, 221, 255),
-            parentBackgroundColor = (240, 240, 240, 255),
-            fontFamily = "Verdana",
-            fontSize = 8,
-            fontWeight = "normal",
-            borderStyle = "solid",
-            borderWidth = 1,
-            borderRadius = 2)
+Button(parent = None,
+       primaryColor = (21, 21, 21, 255),
+       secondaryColor = (245, 177, 66, 255),
+       parentBackgroundColor = (240, 240, 240, 255),
+       fontFamily = 'Verdana',
+       fontSize = 8,
+       fontWeight = 'normal',
+       borderStyle = 'solid',
+       borderWidth = 1,
+       borderRadius = 2,
 ```
 
 **Parameters:**
@@ -169,9 +167,9 @@ SharpButton(parent = None,
 
 **Description:** set border properties.
 
-# SharpCanvas
+# Canvas
 
-**SharpCanvas** an inherited class of **QLabel** with a null **QPixmap.** Using **QPainter,** **SharpCanvas** allows the user to paint on the canvas.
+**Canvas** an inherited class of **QLabel** with a null **QPixmap.** Using **QPainter,** **Canvas** allows the user to draw on the window.
 
 ## Example Use
 
@@ -179,7 +177,7 @@ SharpButton(parent = None,
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QLabel
 from PyQt5.QtCore import Qt
-from QSharpTools import SharpCanvas
+from MangoUI import Canvas
 
 class Window(QMainWindow):
     def __init__(self):
@@ -194,14 +192,14 @@ class Window(QMainWindow):
         self.setGeometry(self.xPos, self.yPos, self.width, self.height)
         self.vBoxLayout = QVBoxLayout()
 
-        self.canvas = SharpCanvas(
+        self.canvas = Canvas(
             width = 150,
             height = 150,
-            penColor = (49, 1, 64),
-            canvasColor = (255, 175, 94),
+            penColor = (21, 21, 21),
+            canvasColor = (245, 177, 66),
             strokeWidth = 5,
             borderWidth = 2,
-            borderColor = (49, 1, 64)
+            borderColor = (21, 21, 21)
         )
         self.vBoxLayout.addWidget(self.canvas, alignment = Qt.AlignCenter)
 
@@ -210,35 +208,35 @@ class Window(QMainWindow):
         self.setCentralWidget(self.centralWidget)
         self.show()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWin = Window()
     sys.exit(app.exec_())
 ```
 
-<img src="img/SharpCanvasRecording.gif" alt="Sharp Canvas Recording" width="200"/>
+<img src="img/CanvasExample.gif" alt="Canvas Example" width="200"/>
 
 ## Constructors & Methods
 
-- [SharpCanvas()](#sharpcanvas-1)
+- [Canvas()](#canvas-1)
 - [setPenColor()](#setpencolor)
 - [setBorder()](#setborder-1)
 - [saveCanvas()](#savecanvas)
 - [clearCanvas()](#clearcanvas)
 
-## SharpCanvas()
+## Canvas()
 
 ```python
-SharpCanvas(parent = None,
-            width = 200,
-            height = 200,
-            penColor = (25, 25, 25, 255),
-            canvasColor = (255, 247, 242, 255),
-            strokeStyle = Qt.SolidLine,
-            strokeWidth = 3,
-            borderStyle = "solid",
-            borderColor = (0, 0, 0, 255),
-            borderWidth = 1)
+Canvas(parent = None,
+       width = 200,
+       height = 200,
+       penColor = (25, 25, 25, 255),
+       canvasColor = (255, 247, 242, 255),
+       strokeStyle = Qt.SolidLine,
+       strokeWidth = 3,
+       borderStyle = 'solid',
+       borderColor = (0, 0, 0, 255),
+       borderWidth = 1,
 ```
 
 **Parameters:**

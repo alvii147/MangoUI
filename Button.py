@@ -15,7 +15,7 @@ class Button(QPushButton):
             fontWeight = 'normal',
             borderStyle = 'solid',
             borderWidth = 1,
-            borderRadius = 2
+            borderRadius = 2,
         ):
 
         if parent:

@@ -15,7 +15,7 @@ class Canvas(QLabel):
             strokeWidth = 3,
             borderStyle = 'solid',
             borderColor = (0, 0, 0, 255),
-            borderWidth = 1
+            borderWidth = 1,
         ):
 
         if parent:
