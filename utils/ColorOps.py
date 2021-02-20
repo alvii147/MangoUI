@@ -3,13 +3,13 @@ from PyQt5.QtGui import QColor
 
 def RGBAstr_to_RGBAtuple(s):
     if not isinstance(s, str):
-        raise TypeError(f"Invalid argument type {type(s)}, expected string")
+        raise TypeError(f'Invalid argument type {type(s)}, expected string')
 
-    pattern = "^\s*rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*(\d+)\s*)?\)\s*$"
+    pattern = '^\s*rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*(\d+)\s*)?\)\s*$'
     search = re.search(pattern, s)
 
     if search == None or len(search.groups()) < 3:
-        raise ValueError("Invalid RGBA string")
+        raise ValueError('Invalid RGBA string')
 
     tup = (
         int(search.group(1)),
@@ -22,28 +22,28 @@ def RGBAstr_to_RGBAtuple(s):
 
 def RGBAtuple_to_RGBAstr(tup):
     if not isinstance(tup, tuple):
-        raise TypeError(f"Invalid argument type {type(tup)}, expected tuple")
+        raise TypeError(f'Invalid argument type {type(tup)}, expected tuple')
 
     if len(tup) < 3:
-        raise ValueError("Missing RGBA values in tuple, expected at least 3")
+        raise ValueError('Missing RGBA values in tuple, expected at least 3')
 
-    s = "rgba("
+    s = 'rgba('
 
-    s += str(tup[0]) + ", "
-    s += str(tup[1]) + ", "
-    s += str(tup[2]) + ", "
-    s += str(tup[3]) if len(tup) > 3 else "255"
+    s += str(tup[0]) + ', '
+    s += str(tup[1]) + ', '
+    s += str(tup[2]) + ', '
+    s += str(tup[3]) if len(tup) > 3 else '255'
 
-    s += ")"
+    s += ')'
 
     return s
 
 def RGBAint_to_RGBAtuple(i):
     if not isinstance(i, int):
-        raise TypeError(f"Invalid argument type {type(i)}, expected int")
+        raise TypeError(f'Invalid argument type {type(i)}, expected int')
 
     if i < 0 or i > (2 ** 32) - 1:
-        raise ValueError("Invalid integer argument, expected unsigned 32 bit integer")
+        raise ValueError('Invalid integer argument, expected unsigned 32 bit integer')
 
     b = i & 255
     g = (i >> 8) & 255
@@ -56,10 +56,10 @@ def RGBAint_to_RGBAtuple(i):
 
 def RGBAtuple_to_RGBAint(tup):
     if not isinstance(tup, tuple):
-        raise TypeError(f"Invalid argument type {type(tup)}, expected tuple")
+        raise TypeError(f'Invalid argument type {type(tup)}, expected tuple')
 
     if len(tup) < 3:
-        raise ValueError("Missing RGBA values in tuple, expected at least 3")
+        raise ValueError('Missing RGBA values in tuple, expected at least 3')
 
     b = tup[2]
     g = tup[1] << 8
@@ -72,7 +72,7 @@ def RGBAtuple_to_RGBAint(tup):
 
 def RGBAQColor_to_RGBAtuple(qcolor):
     if not isinstance(qcolor, QColor):
-        raise TypeError(f"Invalid argument type {type(qcolor)}, expected QColor")
+        raise TypeError(f'Invalid argument type {type(qcolor)}, expected QColor')
 
     r = qcolor.red()
     g = qcolor.green()
@@ -85,10 +85,10 @@ def RGBAQColor_to_RGBAtuple(qcolor):
 
 def RGBAtuple_to_RGBAQColor(tup):
     if not isinstance(tup, tuple):
-        raise TypeError(f"Invalid argument type {type(tup)}, expected tuple")
+        raise TypeError(f'Invalid argument type {type(tup)}, expected tuple')
 
     if len(tup) < 3:
-        raise ValueError("Missing RGBA values in tuple, expected at least 3")
+        raise ValueError('Missing RGBA values in tuple, expected at least 3')
 
     qcolor = QColor(*tup)
 
@@ -97,7 +97,7 @@ def RGBAtuple_to_RGBAQColor(tup):
 def to_RGBAtuple(color):
     if isinstance(color, tuple):
         if len(color) < 3:
-            raise ValueError("Missing RGBA values in tuple, expected at least 3")
+            raise ValueError('Missing RGBA values in tuple, expected at least 3')
         elif len(color) == 3:
             return color + (255,)
         else:
@@ -110,9 +110,9 @@ def to_RGBAtuple(color):
     elif isinstance(color, QColor):
         return RGBAQColor_to_RGBAtuple(color)
     else:
-        raise TypeError(f"Invalid argument type {type(color)}")
+        raise TypeError(f'Invalid argument type {type(color)}')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     i = 32434243
     t = (23, 23, 43)
     q = QColor(222, 121, 32, 231)

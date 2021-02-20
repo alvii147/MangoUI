@@ -3,7 +3,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QColor, QPainter, QPen, QBrush, QPixmap
 from .utils.ColorOps import to_RGBAtuple
 
-class SharpCanvas(QLabel):
+class Canvas(QLabel):
     def __init__(
             self,
             parent = None,
@@ -13,7 +13,7 @@ class SharpCanvas(QLabel):
             canvasColor = (255, 247, 242, 255),
             strokeStyle = Qt.SolidLine,
             strokeWidth = 3,
-            borderStyle = "solid",
+            borderStyle = 'solid',
             borderColor = (0, 0, 0, 255),
             borderWidth = 1
         ):

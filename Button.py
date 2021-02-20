@@ -3,17 +3,17 @@ from PyQt5.QtCore import Qt, QVariantAnimation, QAbstractAnimation
 from PyQt5.QtGui import QCursor, QColor
 from .utils.ColorOps import to_RGBAtuple
 
-class SharpButton(QPushButton):
+class Button(QPushButton):
     def __init__(
             self,
             parent = None,
-            primaryColor = (0, 179, 60, 255),
-            secondaryColor = (204, 255, 221, 255),
+            primaryColor = (21, 21, 21, 255),
+            secondaryColor = (245, 177, 66, 255),
             parentBackgroundColor = (240, 240, 240, 255),
-            fontFamily = "Verdana",
+            fontFamily = 'Verdana',
             fontSize = 8,
-            fontWeight = "normal",
-            borderStyle = "solid",
+            fontWeight = 'normal',
+            borderStyle = 'solid',
             borderWidth = 1,
             borderRadius = 2
         ):

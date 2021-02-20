@@ -1,2 +1,2 @@
-from .SharpButton import SharpButton
-from .SharpCanvas import SharpCanvas
+from .Button import Button
+from .Canvas import Canvas
