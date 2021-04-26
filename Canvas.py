@@ -69,13 +69,13 @@ class Canvas(QLabel):
         self.setPixmap(pixmap)
 
     def renderStyleSheet(self):
-        self.styleSheet = f"""
+        self.styleSheet = f'''
             QLabel {{
                 border-style: {str(self.borderStyle)};
                 border-color: rgba{to_RGBAtuple(self.borderColor)};
                 border-width: {str(self.borderWidth)}px;
             }}
-        """
+        '''
         self.setStyleSheet(self.styleSheet)
 
     def resize(self, width, height):

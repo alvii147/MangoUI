@@ -42,7 +42,7 @@ class Button(QPushButton):
         self.renderStyleSheet()
 
     def renderStyleSheet(self):
-        self.styleSheet = f"""
+        self.styleSheet = f'''
             QPushButton {{
                 color: rgba{to_RGBAtuple(self.color)};
                 background-color: rgba{to_RGBAtuple(self.backgroundColor)};
@@ -61,7 +61,7 @@ class Button(QPushButton):
             QPushButton::pressed {{
                 border-color: rgba{to_RGBAtuple(self.parentBackgroundColor)};
             }}
-        """
+        '''
         self.setStyleSheet(self.styleSheet)
 
     def onHover(self, color):
