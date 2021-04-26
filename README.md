@@ -92,13 +92,13 @@ Button(parent = None,
 **Parameters:**
 
 - *primaryColor:*
-  - [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+  - [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
   - Normal text color and background color on hover
 - *secondaryColor:*
-  - [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+  - [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
   - Normal background color and the text color on hover
 - *parentBackgroundColor:*
-  - [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+  - [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
   - Needed to apply a size change effect when clicked
 - *fontFamily:*
   - string representing name of font family
@@ -119,7 +119,7 @@ Button(parent = None,
 
 **Parameters:**
 
-- *color:* [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+- *color:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
 
 **Description:** set primary color.
 
@@ -129,7 +129,7 @@ Button(parent = None,
 
 **Parameters:**
 
-- *color:* [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+- *color:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
 
 **Description:** set secondary color.
 
@@ -139,7 +139,7 @@ Button(parent = None,
 
 **Parameters:**
 
-- *color:* [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+- *color:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
 
 **Description:** set background color of parent widget.
 
@@ -246,10 +246,10 @@ Canvas(parent = None,
 - *height:*
   - Height of canvas
 - *penColor:*
-  - [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+  - [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
   - Color of pen
 - *canvasColor:*
-  - [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+  - [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
   - Background color of canvas
 - *strokeStyle:*
   - [QPenStyle](https://doc.qt.io/qtforpython-5.12/PySide2/QtGui/QPen.html#pen-style) object
@@ -259,7 +259,7 @@ Canvas(parent = None,
 - *borderStyle:*
   - string representing border style
 - *borderColor*
-  - [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+  - [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
   - Color of canvas border
 - *borderWidth:*
   - integer representing border width
@@ -270,7 +270,7 @@ Canvas(parent = None,
 
 **Parameters:**
 
-- *color:* [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+- *color:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
 
 **Description:** set pen color.
 
@@ -281,7 +281,7 @@ Canvas(parent = None,
 **Parameters:**
 
 - *borderStyle = None:* string representing border style
-- *borderColor = None:* [QColor](https://doc-snapshots.qt.io/qtforpython-dev/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string, representing canvas border color
+- *borderColor = None:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string, representing canvas border color
 - *borderWidth = None:* integer representing border width
 
 **Description:** set border properties.
