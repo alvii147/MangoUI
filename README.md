@@ -27,11 +27,11 @@ class Window(QMainWindow):
     def initUI(self):
         self.setGeometry(self.xPos, self.yPos, self.width, self.height)
         self.vBoxLayout = QVBoxLayout()
-
+        
         self.button = Button(
-			borderWidth = 1,
-			borderRadius = 4,
-		)
+            borderWidth = 1,
+            borderRadius = 4,
+        )
         self.button.setText('Default Button')
         self.vBoxLayout.addWidget(self.button)
 
