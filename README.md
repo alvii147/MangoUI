@@ -4,6 +4,19 @@
 
 **Mango.UI** is a library for **PyQt5** that includes sharper-looking custom-styled widgets for better desktop UI development.
 
+<table>
+<tr>
+	<td><strong>Button</strong></td>
+	<td><strong>Canvas</strong></td>
+	<td><strong>SliderLayout</strong></td>
+</tr>
+<tr>
+    <td><img src="img/ButtonExample.gif" alt="ButtonExample" width="300"/></td>
+    <td><img src="img/CanvasExample.gif" alt="Canvas Example" width="300"/></td>
+    <td><img src="img/SliderLayoutExample.gif" alt="SliderLayout Example" width="300"/></td>
+</tr>
+</table>
+
 # Button
 
 **Button** an inherited class of **QPushButton,** styled using **QSS** and **QVariantAnimation.**
