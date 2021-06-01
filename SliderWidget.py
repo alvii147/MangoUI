@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QStackedWidget
 from PyQt5.QtCore import Qt, QEasingCurve, QPoint, pyqtSlot, QParallelAnimationGroup, QPropertyAnimation, QAbstractAnimation
 
-class SliderLayout(QStackedWidget):
+class SliderWidget(QStackedWidget):
     def __init__(
             self,
             parent = None,
