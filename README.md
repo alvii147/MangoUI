@@ -8,14 +8,15 @@
 <tr>
 	<td><strong>Button</strong></td>
 	<td><strong>Canvas</strong></td>
-	<td><strong>SliderLayout</strong></td>
+	<td><strong>Slider</strong></td>
 </tr>
 <tr>
-    <td><img src="img/ButtonExample.gif" alt="ButtonExample" width="300"/></td>
+    <td><img src="img/ButtonExample.gif" alt="Button Example" width="300"/></td>
     <td><img src="img/CanvasExample.gif" alt="Canvas Example" width="300"/></td>
-    <td><img src="img/SliderLayoutExample.gif" alt="SliderLayout Example" width="300"/></td>
+    <td><img src="img/SliderExample.gif" alt="Slider Example" width="300"/></td>
 </tr>
 </table>
+
 
 # Button
 
@@ -26,6 +27,7 @@
 ```python
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout
+
 from MangoUI import Button
 
 class Window(QMainWindow):
@@ -33,8 +35,8 @@ class Window(QMainWindow):
         super().__init__()
         self.width = 150
         self.height = 150
-        self.xPos = 500
-        self.yPos = 500
+        self.xPos = 600
+        self.yPos = 400
         self.initUI()
 
     def initUI(self):
@@ -76,7 +78,7 @@ if __name__ == '__main__':
     myWin = Window()
     sys.exit(app.exec_())
 ```
-<img src="img/ButtonExample.gif" alt="ButtonExample" width="200"/>
+<img src="img/ButtonExample.gif" alt="Button Example" width="200"/>
 
 ## Constructors & Methods
 
@@ -192,6 +194,7 @@ Button(
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QLabel
 from PyQt5.QtCore import Qt
+
 from MangoUI import Canvas
 
 class Window(QMainWindow):
@@ -199,8 +202,8 @@ class Window(QMainWindow):
         super().__init__()
         self.width = 150
         self.height = 150
-        self.xPos = 500
-        self.yPos = 500
+        self.xPos = 600
+        self.yPos = 400
         self.initUI()
 
     def initUI(self):
@@ -319,9 +322,9 @@ Canvas(
 
 **Description:** clear canvas drawing.
 
-# SliderLayout
+# Slider
 
-**SliderLayout** an inherited class of **QStackedWidget** that supports slide navigation between stacked widgets.
+**Slider** an inherited class of **QStackedWidget** that supports slide navigation between stacked widgets.
 
 ## Example Use
 
@@ -329,22 +332,23 @@ Canvas(
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QWidget
 from PyQt5.QtCore import Qt, QEasingCurve
-from MangoUI import SliderLayout
+
+from MangoUI import Slider
 
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
         self.width = 500
         self.height = 500
-        self.xPos = 500
-        self.yPos = 500
+        self.xPos = 600
+        self.yPos = 400
         self.initUI()
 
     def initUI(self):
         self.setGeometry(self.xPos, self.yPos, self.width, self.height)
         self.vBoxLayout = QVBoxLayout()
 
-        self.sliderLayout = SliderLayout(
+        self.slider = Slider(
             direction = Qt.Horizontal,
             duration = 750,
             animationType = QEasingCurve.OutQuad,
@@ -355,33 +359,33 @@ class Window(QMainWindow):
         self.label1.setText('First Slide')
         self.label1.setAlignment(Qt.AlignCenter)
         self.label1.setStyleSheet('QLabel{background-color: rgb(245, 177, 66); color: rgb(21, 21, 21); font: 25pt;}')
-        self.sliderLayout.addWidget(self.label1)
+        self.slider.addWidget(self.label1)
 
         self.label2 = QLabel()
         self.label2.setText('Second Slide')
         self.label2.setAlignment(Qt.AlignCenter)
         self.label2.setStyleSheet('QLabel{background-color: rgb(21, 21, 21); color: rgb(245, 177, 66); font: 25pt;}')
-        self.sliderLayout.addWidget(self.label2)
+        self.slider.addWidget(self.label2)
 
         self.label3 = QLabel()
         self.label3.setText('Third Slide')
         self.label3.setAlignment(Qt.AlignCenter)
         self.label3.setStyleSheet('QLabel{background-color: rgb(93, 132, 48); color: rgb(245, 177, 66); font: 25pt;}')
-        self.sliderLayout.addWidget(self.label3)
+        self.slider.addWidget(self.label3)
 
         self.buttonPrevious = QPushButton()
         self.buttonPrevious.setText('Previous Slide')
-        self.buttonPrevious.clicked.connect(self.sliderLayout.slidePrevious)
+        self.buttonPrevious.clicked.connect(self.slider.slidePrevious)
 
         self.buttonNext = QPushButton()
         self.buttonNext.setText('Next Slide')
-        self.buttonNext.clicked.connect(self.sliderLayout.slideNext)
+        self.buttonNext.clicked.connect(self.slider.slideNext)
 
         self.buttonLayout = QHBoxLayout()
         self.buttonLayout.addWidget(self.buttonPrevious)
         self.buttonLayout.addWidget(self.buttonNext)
 
-        self.vBoxLayout.addWidget(self.sliderLayout)
+        self.vBoxLayout.addWidget(self.slider)
         self.vBoxLayout.addLayout(self.buttonLayout)
 
         self.centralWidget = QWidget(self)
@@ -396,20 +400,20 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-<img src="img/SliderLayoutExample.gif" alt="SliderLayout Example" width="400"/>
+<img src="img/SliderExample.gif" alt="Slider Example" width="400"/>
 
 ## Constructors & Methods
 
-- [SliderLayout()](#sliderlayout-1)
+- [Slider()](#slider-1)
 - [setDirection()](#setdirection)
 - [setDuration()](#setduration)
 - [setAnimationType()](#setAnimationType)
 - [setWrap()](#setwrap)
 
-## SliderLayout()
+## Slider()
 
 ```python
-SliderLayout(
+Slider(
     parent = None,
     direction = Qt.Horizontal,
     duration = 500,

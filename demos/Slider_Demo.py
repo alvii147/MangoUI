@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QWidget
 from PyQt5.QtCore import Qt, QEasingCurve
 
-from MangoUI import SliderWidget
+from MangoUI import Slider
 
 class Window(QMainWindow):
     def __init__(self):
@@ -17,7 +17,7 @@ class Window(QMainWindow):
         self.setGeometry(self.xPos, self.yPos, self.width, self.height)
         self.vBoxLayout = QVBoxLayout()
 
-        self.sliderLayout = SliderWidget(
+        self.slider = Slider(
             direction = Qt.Horizontal,
             duration = 750,
             animationType = QEasingCurve.OutQuad,
@@ -28,33 +28,33 @@ class Window(QMainWindow):
         self.label1.setText('First Slide')
         self.label1.setAlignment(Qt.AlignCenter)
         self.label1.setStyleSheet('QLabel{background-color: rgb(245, 177, 66); color: rgb(21, 21, 21); font: 25pt;}')
-        self.sliderLayout.addWidget(self.label1)
+        self.slider.addWidget(self.label1)
 
         self.label2 = QLabel()
         self.label2.setText('Second Slide')
         self.label2.setAlignment(Qt.AlignCenter)
         self.label2.setStyleSheet('QLabel{background-color: rgb(21, 21, 21); color: rgb(245, 177, 66); font: 25pt;}')
-        self.sliderLayout.addWidget(self.label2)
+        self.slider.addWidget(self.label2)
 
         self.label3 = QLabel()
         self.label3.setText('Third Slide')
         self.label3.setAlignment(Qt.AlignCenter)
         self.label3.setStyleSheet('QLabel{background-color: rgb(93, 132, 48); color: rgb(245, 177, 66); font: 25pt;}')
-        self.sliderLayout.addWidget(self.label3)
+        self.slider.addWidget(self.label3)
 
         self.buttonPrevious = QPushButton()
         self.buttonPrevious.setText('Previous Slide')
-        self.buttonPrevious.clicked.connect(self.sliderLayout.slidePrevious)
+        self.buttonPrevious.clicked.connect(self.slider.slidePrevious)
 
         self.buttonNext = QPushButton()
         self.buttonNext.setText('Next Slide')
-        self.buttonNext.clicked.connect(self.sliderLayout.slideNext)
+        self.buttonNext.clicked.connect(self.slider.slideNext)
 
         self.buttonLayout = QHBoxLayout()
         self.buttonLayout.addWidget(self.buttonPrevious)
         self.buttonLayout.addWidget(self.buttonNext)
 
-        self.vBoxLayout.addWidget(self.sliderLayout)
+        self.vBoxLayout.addWidget(self.slider)
         self.vBoxLayout.addLayout(self.buttonLayout)
 
         self.centralWidget = QWidget(self)
