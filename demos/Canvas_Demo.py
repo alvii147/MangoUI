@@ -1,6 +1,8 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QLabel
 from PyQt5.QtCore import Qt
+
+sys.path.append('../../')
 from MangoUI import Canvas
 
 class Window(QMainWindow):

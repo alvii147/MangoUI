@@ -1,5 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout
+
+sys.path.append('../../')
 from MangoUI import Button
 
 class Window(QMainWindow):
