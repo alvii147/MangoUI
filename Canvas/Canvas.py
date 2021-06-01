@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QColor, QPainter, QPen, QBrush, QPixmap
-from .utils.ColorOps import to_RGBAtuple
+from MangoUI.utils.ColorOps import to_RGBAtuple
 
 class Canvas(QLabel):
     def __init__(

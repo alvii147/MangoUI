@@ -2,7 +2,6 @@ import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QWidget
 from PyQt5.QtCore import Qt, QEasingCurve
 
-sys.path.append('../../')
 from MangoUI import SliderWidget
 
 class Window(QMainWindow):
@@ -10,8 +9,8 @@ class Window(QMainWindow):
         super().__init__()
         self.width = 500
         self.height = 500
-        self.xPos = 500
-        self.yPos = 500
+        self.xPos = 600
+        self.yPos = 400
         self.initUI()
 
     def initUI(self):

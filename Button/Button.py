@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtCore import Qt, QVariantAnimation, QAbstractAnimation
 from PyQt5.QtGui import QCursor, QColor
-from .utils.ColorOps import to_RGBAtuple
+from MangoUI.utils.ColorOps import to_RGBAtuple
 
 class Button(QPushButton):
     def __init__(

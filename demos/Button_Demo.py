@@ -1,7 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout
 
-sys.path.append('../../')
 from MangoUI import Button
 
 class Window(QMainWindow):
@@ -9,8 +8,8 @@ class Window(QMainWindow):
         super().__init__()
         self.width = 150
         self.height = 150
-        self.xPos = 500
-        self.yPos = 500
+        self.xPos = 600
+        self.yPos = 400
         self.initUI()
 
     def initUI(self):
