@@ -9,13 +9,13 @@ def RGBAstr_to_RGBAtuple(s):
     search = re.search(pattern, s)
 
     if search == None or len(search.groups()) < 3:
-        raise ValueError('Invalid RGBA string')
+        raise ValueError(f'Invalid RGBA string, {s}')
 
     tup = (
         int(search.group(1)),
         int(search.group(2)),
         int(search.group(3)),
-        int(search.group(4)) if search.group(4) != None else 255
+        int(search.group(4)) if search.group(4) != None else 255,
     )
 
     return tup
@@ -25,7 +25,7 @@ def RGBAtuple_to_RGBAstr(tup):
         raise TypeError(f'Invalid argument type {type(tup)}, expected tuple')
 
     if len(tup) < 3:
-        raise ValueError('Missing RGBA values in tuple, expected at least 3')
+        raise ValueError(f'Missing RGBA values in tuple, {tup}, expected at least 3')
 
     s = 'rgba('
 
@@ -38,12 +38,34 @@ def RGBAtuple_to_RGBAstr(tup):
 
     return s
 
+def HEXstr_to_RGBAtuple(s):
+    if not isinstance(s, str):
+        raise TypeError(f'Invalid argument type {type(s)}, expected string')
+
+    pattern = '^#?([0-9a-fA-F]{6,8})\S*$'
+    search = re.search(pattern, s.replace(' ', ''))
+
+    if search == None or len(search.groups()) < 1:
+        raise ValueError(f'Invalid HEX string, {s}')
+
+    tup = (
+        int(search.group(1)[2:4], 16),
+        int(search.group(1)[4:6], 16),
+    )
+
+    if len(search.group(1)) < 8:
+        tup = (int(search.group(1)[0:2], 16),) + tup + (255,)
+    else:
+        tup += (int(search.group(1)[6:8], 16), int(search.group(1)[0:2], 16),)
+
+    return tup
+
 def RGBAint_to_RGBAtuple(i):
     if not isinstance(i, int):
         raise TypeError(f'Invalid argument type {type(i)}, expected int')
 
     if i < 0 or i > (2 ** 32) - 1:
-        raise ValueError('Invalid integer argument, expected unsigned 32 bit integer')
+        raise ValueError(f'Invalid integer argument, {i}, expected unsigned 32 bit integer')
 
     b = i & 255
     g = (i >> 8) & 255
@@ -59,7 +81,7 @@ def RGBAtuple_to_RGBAint(tup):
         raise TypeError(f'Invalid argument type {type(tup)}, expected tuple')
 
     if len(tup) < 3:
-        raise ValueError('Missing RGBA values in tuple, expected at least 3')
+        raise ValueError(f'Missing RGBA values in tuple, {tup}, expected at least 3')
 
     b = tup[2]
     g = tup[1] << 8
@@ -88,7 +110,7 @@ def RGBAtuple_to_RGBAQColor(tup):
         raise TypeError(f'Invalid argument type {type(tup)}, expected tuple')
 
     if len(tup) < 3:
-        raise ValueError('Missing RGBA values in tuple, expected at least 3')
+        raise ValueError(f'Missing RGBA values in tuple, {tup}, expected at least 3')
 
     qcolor = QColor(*tup)
 
@@ -97,14 +119,20 @@ def RGBAtuple_to_RGBAQColor(tup):
 def to_RGBAtuple(color):
     if isinstance(color, tuple):
         if len(color) < 3:
-            raise ValueError('Missing RGBA values in tuple, expected at least 3')
+            raise ValueError(f'Missing RGBA values in tuple, {color}, expected at least 3')
         elif len(color) == 3:
             return color + (255,)
         else:
             return color[:4]
         return color
     elif isinstance(color, str):
-        return RGBAstr_to_RGBAtuple(color)
+        try:
+            return RGBAstr_to_RGBAtuple(color)
+        except ValueError:
+            try:
+                return HEXstr_to_RGBAtuple(color)
+            except ValueError:
+                raise ValueError(f'Invalid string, {s}')
     elif isinstance(color, int):
         return RGBAint_to_RGBAtuple(color)
     elif isinstance(color, QColor):
@@ -116,8 +144,10 @@ if __name__ == '__main__':
     i = 32434243
     t = (23, 23, 43)
     q = QColor(222, 121, 32, 231)
+    h = '#ff33b832'
     f = 123.2
     print(to_RGBAtuple(i))
     print(to_RGBAtuple(t))
     print(to_RGBAtuple(q))
+    print(to_RGBAtuple(h))
     print(to_RGBAtuple(f))
