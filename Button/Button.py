@@ -92,22 +92,17 @@ class Button(QPushButton):
         )
         self.borderColor = self.primaryColor
 
-    def setPrimaryColor(self, color):
-        self.primaryColor = to_RGBAtuple(color)
+    def setColors(self, primaryColor = None, secondaryColor = None, parentBackgroundColor = None):
+        if primaryColor != None:
+            self.primaryColor = to_RGBAtuple(primaryColor)
+
+        if secondaryColor != None:
+            self.secondaryColor = to_RGBAtuple(secondaryColor)
+
+        if parentBackgroundColor != None:
+            self.parentBackgroundColor = to_RGBAtuple(parentBackgroundColor)
+
         self.setupColors()
-        self.renderStyleSheet()
-
-        return True
-
-    def setSecondaryColor(self, color):
-        self.secondaryColor = to_RGBAtuple(color)
-        self.setupColors()
-        self.renderStyleSheet()
-
-        return True
-
-    def setParentBackgroundColor(self, color):
-        self.parentBackgroundColor = to_RGBAtuple(color)
         self.renderStyleSheet()
 
         return True

@@ -83,9 +83,7 @@ if __name__ == '__main__':
 ## Constructors & Methods
 
 - [Button()](#button-1)
-- [setPrimaryColor()](#setprimarycolor)
-- [setSecondaryColor()](#setsecondarycolor)
-- [setParentBackgroundColor()](#setparentbackgroundcolor)
+- [setColors()](#setcolor)
 - [setFont()](#setfont)
 - [setBorder()](#setborder)
 
@@ -130,35 +128,17 @@ Button(
 - *borderRadius*
   - integer representing border radius
 
-## setPrimaryColor()
+## setColors()
 
 **Return type:** bool
 
 **Parameters:**
 
-- *color:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+- *primaryColor = None:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+- *secondaryColor = None:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
+- *parentBackgroundColor = None:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
 
-**Description:** set primary color.
-
-## setSecondaryColor()
-
-**Return type:** bool
-
-**Parameters:**
-
-- *color:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
-
-**Description:** set secondary color.
-
-## setParentBackgroundColor()
-
-**Return type:** bool
-
-**Parameters:**
-
-- *color:* [QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) object, RGBA tuple, RGBA unsigned 32-bit integer, or RGBA string
-
-**Description:** set background color of parent widget.
+**Description:** set button colors.
 
 ## setFont()
 
@@ -473,3 +453,4 @@ Slider(
 - *wrap:* boolean representing whether or not to wrap around slides
 
 **Description:** set up slides to wrap around..
+
