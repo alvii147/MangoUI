@@ -7,52 +7,38 @@
 <table>
 <tr>
 	<td>
-		<p style="text-align: center; ">
-			<strong>Button</strong>
-		</p>
+		<p align="center"><strong>Button</strong></p>
 	</td>
 	<td>
-		<p style="text-align: center; ">
-			<strong>Canvas</strong>
-		</p>
+		<p align="center"><strong>Canvas</strong></p>
 	</td>
 </tr>
 <tr>
     <td>
-    	<p style="text-align: center; ">
-    		<img src="img/ButtonExample.gif" alt="Button Example" width="300"/>
-    	</p>
+    	<p align="center"><img src="img/ButtonExample.gif" alt="Button Example" width="200"/></p>
     </td>
     <td>
-    	<p style="text-align: center; ">
-    		<img src="img/CanvasExample.gif" alt="Canvas Example" width="300"/>
-    	</p>
+    	<p align="center"><img src="img/CanvasExample.gif" alt="Canvas Example" width="200"/></p>
     </td>
 </tr>
 <tr>
 	<td>
-		<p style="text-align: center; ">
-			<strong>Slider</strong>
+		<p align="center"><strong>Slider</strong></p>
 	</td>
 	<td>
-		<p style="text-align: center; ">
-			<strong>TagBox</strong>
-		</p>
+		<p align="center"><strong>TagBox</strong></p>
 	</td>
 </tr>
 <tr>
 	<td>
-		<p style="text-align: center; ">
-			<img src="img/SliderExample.gif" alt="Slider Example" width="300"/>
-		</p>
+		<p align="center"><img src="img/SliderExample.gif" alt="Slider Example" width="200"/></p>
 	</td>
 	<td>
-		<p style="text-align: center; ">
-			<img src="img/TagBoxExample.gif" alt="TagBox Example" width="500"/>
-		</p>
+        <p align="center"><img src="img/TagBoxExample.gif" alt="TagBox Example" width="400"/></p>
 	</td>
 </tr>
 </table>
+
 
 
 # Button
