@@ -60,6 +60,22 @@ def HEXstr_to_RGBAtuple(s):
 
     return tup
 
+def RGBAtuple_to_HEXstr(tup):
+    if not isinstance(tup, tuple):
+        raise TypeError(f'Invalid argument type {type(tup)}, expected tuple')
+
+    if len(tup) < 3:
+        raise ValueError(f'Missing RGBA values in tuple, {tup}, expected at least 3')
+
+    s = str(format(tup[0], 'x').upper())
+    s += str(format(tup[1], 'x').upper())
+    s += str(format(tup[2], 'x').upper())
+    s = str(format(tup[3], 'x').upper() if len(tup) > 3 else 'FF') + s
+
+    s = '#' + s
+
+    return s
+
 def RGBAint_to_RGBAtuple(i):
     if not isinstance(i, int):
         raise TypeError(f'Invalid argument type {type(i)}, expected int')
@@ -141,13 +157,14 @@ def to_RGBAtuple(color):
         raise TypeError(f'Invalid argument type {type(color)}')
 
 if __name__ == '__main__':
-    i = 32434243
-    t = (23, 23, 43)
-    q = QColor(222, 121, 32, 231)
-    h = '#ff33b832'
-    f = 123.2
-    print(to_RGBAtuple(i))
-    print(to_RGBAtuple(t))
-    print(to_RGBAtuple(q))
-    print(to_RGBAtuple(h))
-    print(to_RGBAtuple(f))
+    #i = 32434243
+    #t = (23, 23, 43)
+    #q = QColor(222, 121, 32, 231)
+    #h = '#ff33b832'
+    #f = 123.2
+    #print(to_RGBAtuple(i))
+    #print(to_RGBAtuple(t))
+    #print(to_RGBAtuple(q))
+    #print(to_RGBAtuple(h))
+    #print(to_RGBAtuple(f))
+    print(RGBAtuple_to_HEXstr((51, 184, 50, 255)))
