@@ -41,6 +41,22 @@
 
 
 
+# Installation & Setup
+
+MangoUI is built on top of [PyQt5](https://pypi.org/project/PyQt5/).
+
+Install PyQt5:
+
+```
+pip install PyQt5
+```
+
+Clone this repository:
+
+```
+git clone https://github.com/alvii147/MangoUI.git
+```
+
 # Button
 
 **Button** an inherited class of **QPushButton,** styled using **QSS** and **QVariantAnimation.**
