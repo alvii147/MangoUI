@@ -31,7 +31,7 @@
 </tr>
 <tr>
 	<td>
-		<p align="center"><img src="img/SliderExample.gif" alt="Slider Example" width="200"/></p>
+		<p align="center"><img src="img/SliderExample.gif" alt="Slider Example" width="300"/></p>
 	</td>
 	<td>
         <p align="center"><img src="img/TagBoxExample.gif" alt="TagBox Example" width="400"/></p>
