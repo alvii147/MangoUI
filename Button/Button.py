@@ -4,19 +4,37 @@ from PyQt5.QtGui import QCursor, QColor
 from MangoUI.utils.ColorOps import to_RGBAtuple
 
 class Button(QPushButton):
+    '''Button an inherited class of QPushButton, styled using QSS and QVariantAnimation.'''
     def __init__(
-            self,
-            parent = None,
-            primaryColor = (21, 21, 21, 255),
-            secondaryColor = (245, 177, 66, 255),
-            parentBackgroundColor = (240, 240, 240, 255),
-            fontFamily = 'Verdana',
-            fontSize = 8,
-            fontWeight = 'normal',
-            borderStyle = 'solid',
-            borderWidth = 1,
-            borderRadius = 2,
-        ):
+        self,
+        parent = None,
+        primaryColor = (21, 21, 21, 255),
+        secondaryColor = (245, 177, 66, 255),
+        parentBackgroundColor = (240, 240, 240, 255),
+        fontFamily = 'Verdana',
+        fontSize = 8,
+        fontWeight = 'normal',
+        borderStyle = 'solid',
+        borderWidth = 1,
+        borderRadius = 2,
+    ):
+        '''Create new Button object.
+
+        Parameters:
+            parent (QWidget obj/QLayout obj): parent element
+            primaryColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): normal text color and background color on hover
+            secondaryColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): normal background color and the text color on hover
+            parentBackgroundColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): parent element's background color used for minimize effect on click 
+            fontFamily (str): name of font family
+            fontSize (int): font size
+            fontWeight (str): font weight
+            borderStyle (str): border style
+            borderWidth (int): border width
+            borderRadius (int): border radius
+
+        Returns:
+            Button obj
+        '''
 
         if parent:
             super().__init__(parent)
@@ -93,6 +111,17 @@ class Button(QPushButton):
         self.borderColor = self.primaryColor
 
     def setColors(self, primaryColor = None, secondaryColor = None, parentBackgroundColor = None):
+        '''Set button colors.
+
+        Parameters:
+            primaryColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): normal text color and background color on hover
+            secondaryColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): normal background color and the text color on hover
+            parentBackgroundColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): parent element's background color used for minimize effect on click 
+
+        Returns:
+            None
+        '''
+
         if primaryColor != None:
             self.primaryColor = to_RGBAtuple(primaryColor)
 
@@ -105,9 +134,18 @@ class Button(QPushButton):
         self.setupColors()
         self.renderStyleSheet()
 
-        return True
-
     def setFont(self, fontFamily = None, fontSize = None, fontWeight = None):
+        '''Set button text font properties.
+
+        Parameters:
+            fontFamily (str): name of font family
+            fontSize (int): font size
+            fontWeight (str): font weight
+
+        Returns:
+            None
+        '''
+
         if fontFamily != None:
             self.fontFamily = fontFamily
 
@@ -119,9 +157,18 @@ class Button(QPushButton):
 
         self.renderStyleSheet()
 
-        return True
-
     def setBorder(self, borderStyle = None, borderWidth = None, borderRadius = None):
+        '''Set button border properties.
+
+        Parameters:
+            borderStyle (str): border style
+            borderWidth (int): border width
+            borderRadius (int): border radius
+
+        Returns:
+            None
+        '''
+
         if borderStyle != None:
             self.borderStyle = borderStyle
 
@@ -132,5 +179,3 @@ class Button(QPushButton):
             self.borderRadius = borderRadius
 
         self.renderStyleSheet()
-
-        return True

@@ -5,20 +5,40 @@ from MangoUI import FlowLayout
 from MangoUI.utils.ColorOps import to_RGBAtuple
 
 class TagBox(QWidget):
+    '''TagBox is an inherited class of QWidget that handles tag lists.'''
     def __init__(
-            self,
-            parent = None,
-            textColor = (21, 21, 21, 255),
-            backgroundColor = (245, 177, 66, 255),
-            backgroundColorOnHover = (249, 205, 134, 255),
-            fontFamily = 'Verdana',
-            fontSize = 10,
-            fontWeight = 'normal',
-            borderStyle = 'solid',
-            borderColor = (21, 21, 21, 255),
-            borderWidth = 1,
-            borderRadius = 2,
-        ):
+        self,
+        parent = None,
+        textColor = (21, 21, 21, 255),
+        backgroundColor = (245, 177, 66, 255),
+        backgroundColorOnHover = (249, 205, 134, 255),
+        fontFamily = 'Verdana',
+        fontSize = 10,
+        fontWeight = 'normal',
+        borderStyle = 'solid',
+        borderColor = (21, 21, 21, 255),
+        borderWidth = 1,
+        borderRadius = 2,
+    ):
+
+        '''Create new TagBox object.
+
+        Parameters:
+            parent (QWidget obj/QLayout obj): parent element
+            textColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): tag text color
+            backgroundColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): tag background color
+            backgroundColorOnHover (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): tag background color on mouse hover
+            fontFamily (str): name of font family
+            fontSize (int): font size
+            fontWeight (str): font weight
+            borderStyle (str): tag border style
+            borderColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): tag border color
+            borderWidth (int): tag border width
+            borderRadius (int): tag border radius
+
+        Returns:
+            TagBox obj
+        '''
 
         if parent:
             super().__init__(parent)
@@ -71,7 +91,7 @@ class TagBox(QWidget):
 
     def initTagBox(self):
         if self.flowLayout.count() != 0:
-            self.clearFlowLayout()
+            self.clearTags()
 
         for tagName in self.tagList:
             self.displayTag(tagName)
@@ -111,9 +131,16 @@ class TagBox(QWidget):
         tagWidget.setLayout(hBoxTag)
         self.flowLayout.addWidget(tagWidget)
 
-        return True
-
     def addTag(self, tagName):
+        '''Add new tag if it doesn't exist.
+
+        Parameters:
+            tagName (str): tag name
+
+        Returns:
+            bool
+        '''
+
         if tagName not in self.tagList:
             self.tagList.append(tagName)
             self.displayTag(tagName)
@@ -121,14 +148,35 @@ class TagBox(QWidget):
         return False
 
     def removeTag(self, index):
-        try:
-            self.tagList.pop(index)
-            self.initTagBox()
-        except IndexError:
-            return False
+        '''Remove tag by index.
 
-    def clearFlowLayout(self):
+        Parameters:
+            index (int): index position of tag to remove
+
+        Returns:
+            None
+        '''
+
+        self.tagList.pop(index)
+        self.initTagBox()
+
+    def clearTags(self):
+        '''Clear all tags.
+
+        Returns:
+            None
+        '''
+
         while self.flowLayout.count():
             child = self.flowLayout.takeAt(0)
             if child.widget():
                 child.widget().deleteLater()
+
+    def getTags(self):
+        '''Get list of tags.
+
+        Returns:
+            list
+        '''
+
+        return self.tagList
