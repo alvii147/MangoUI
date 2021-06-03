@@ -39,7 +39,7 @@ Canvas(
 
 ### Parameters:
 
-**parent** : *QWidget obj/QLayout obj, optional*
+**parent** : *[QWidget](https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QWidget.html) obj/[QLayout](https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QLayout.html) obj, optional*
 - parent element
 
 **width** : *int, default=200*

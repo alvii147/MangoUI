@@ -143,6 +143,8 @@ def addHyperlinks(doc):
         'QStackedWidget': 'https://doc.qt.io/archives/qtforpython-5.12/PySide2/QtWidgets/QStackedWidget.html',
         'Qt.Orientation': 'https://doc.qt.io/qtforpython/PySide6/QtCore/Qt.html#PySide6.QtCore.PySide6.QtCore.Qt.Orientation',
         'QEasingCurve.Type': 'https://doc.qt.io/qtforpython/PySide6/QtCore/QEasingCurve.html#PySide6.QtCore.PySide6.QtCore.QEasingCurve.Type',
+        'QLayout': 'https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QLayout.html',
+        'QWidget': 'https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QWidget.html',
     }
 
     linked_doc = doc

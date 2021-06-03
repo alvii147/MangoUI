@@ -37,7 +37,7 @@ Button(
 
 ### Parameters:
 
-**parent** : *QWidget obj/QLayout obj, optional*
+**parent** : *[QWidget](https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QWidget.html) obj/[QLayout](https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QLayout.html) obj, optional*
 - parent element
 
 **primaryColor** : *[QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str, default=(21, 21, 21, 255)*

@@ -1,6 +1,6 @@
 # TagBox
 
-TagBox is an inherited class of QWidget that handles tag lists.
+TagBox is an inherited class of [QWidget](https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QWidget.html) that handles tag lists.
 
 <img alt="TagBox Example" src="../img/TagBoxExample.gif" width="400"/>
 
@@ -40,7 +40,7 @@ TagBox(
 
 ### Parameters:
 
-**parent** : *QWidget obj/QLayout obj, optional*
+**parent** : *[QWidget](https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QWidget.html) obj/[QLayout](https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QLayout.html) obj, optional*
 - parent element
 
 **textColor** : *[QColor](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QColor.html) obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str, default=(21, 21, 21, 255)*
