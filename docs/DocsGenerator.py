@@ -62,7 +62,7 @@ def documentClass(class_type):
     doc += f'{class_desc}\n\n'
 
     gifpath = f'../img/{class_name}Example.gif'
-    doc += f'![{class_name} Example]({gifpath})\n\n'
+    doc += f'<img alt="{class_name} Example" src="{gifpath}" width="400"/>\n\n'
 
     doc += f'## Constructors & Methods\n\n'
     for (method_name, method_sgn) in class_signature['methods'].items():
@@ -80,7 +80,7 @@ def documentClass(class_type):
         name = class_name if method_name == '__init__' else method_name
         desc = method_sgn['description']
 
-        doc += f'## {name}()\n\n'
+        doc += f'## {name}\n\n'
         doc += f'{desc}\n\n'
         doc += f'```python\n{name}('
 
