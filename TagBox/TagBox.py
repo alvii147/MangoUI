@@ -154,11 +154,13 @@ class TagBox(QWidget):
             index (int): index position of tag to remove
 
         Returns:
-            None
+            str
         '''
 
-        self.tagList.pop(index)
+        removedTag = self.tagList.pop(index)
         self.initTagBox()
+
+        return removedTag
 
     def clearTags(self):
         '''Clear all tags.

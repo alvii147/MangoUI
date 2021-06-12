@@ -128,5 +128,5 @@ removeTag(index)
 - index position of tag to remove
 
 ### Returns:
-- *None*
+- *str*
 
