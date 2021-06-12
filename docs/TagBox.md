@@ -2,7 +2,7 @@
 
 TagBox is an inherited class of [QWidget](https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QWidget.html) that handles tag lists.
 
-<img alt="TagBox Example" src="../img/TagBoxExample.gif" width="400"/>
+<img alt="TagBox Example" src="../img/TagBoxExample.gif" height="300"/>
 
 ## Constructors & Methods
 
@@ -18,7 +18,7 @@ TagBox is an inherited class of [QWidget](https://doc.qt.io/qtforpython-5/PySide
 
 
 
-## TagBox
+## `TagBox`()
 
 Create new TagBox object.
 
@@ -76,7 +76,7 @@ TagBox(
 ### Returns:
 - *TagBox obj*
 
-## addTag
+## `addTag`()
 
 Add new tag if it doesn't exist.
 
@@ -92,7 +92,7 @@ addTag(tagName)
 ### Returns:
 - *bool*
 
-## clearTags
+## `clearTags`()
 
 Clear all tags.
 
@@ -103,7 +103,7 @@ clearTags()
 ### Returns:
 - *None*
 
-## getTags
+## `getTags`()
 
 Get list of tags.
 
@@ -114,7 +114,7 @@ getTags()
 ### Returns:
 - *list*
 
-## removeTag
+## `removeTag`()
 
 Remove tag by index.
 

@@ -2,7 +2,7 @@
 
 Canvas an inherited class of [QLabel](https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QLabel.html) with a null [QPixmap](https://doc.qt.io/qtforpython/PySide6/QtGui/QPixmap.html). Using [QPainter](https://doc.qt.io/qtforpython-5/PySide2/QtGui/QPainter.html), Canvas allows the user to draw on the window.
 
-<img alt="Canvas Example" src="../img/CanvasExample.gif" width="400"/>
+<img alt="Canvas Example" src="../img/CanvasExample.gif" height="300"/>
 
 ## Constructors & Methods
 
@@ -18,7 +18,7 @@ Canvas an inherited class of [QLabel](https://doc.qt.io/qtforpython-5/PySide2/Qt
 
 
 
-## Canvas
+## `Canvas`()
 
 Create new Canvas object.
 
@@ -72,7 +72,7 @@ Canvas(
 ### Returns:
 - *Canvas obj*
 
-## clearCanvas
+## `clearCanvas`()
 
 Clear canvas content.
 
@@ -83,7 +83,7 @@ clearCanvas()
 ### Returns:
 - *None*
 
-## saveCanvas
+## `saveCanvas`()
 
 Save canvas content to image file.
 
@@ -99,7 +99,7 @@ saveCanvas(dest)
 ### Returns:
 - *None*
 
-## setBorder
+## `setBorder`()
 
 Set canvas border properties.
 
@@ -125,7 +125,7 @@ setBorder(
 ### Returns:
 - *None*
 
-## setPenColor
+## `setPenColor`()
 
 Set pen color.
 

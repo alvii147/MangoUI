@@ -2,7 +2,7 @@
 
 Button an inherited class of [QPushButton](https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QPushButton.html), styled using [QSS](https://doc.qt.io/qt-5/stylesheet-syntax.html) and [QVariantAnimation](https://doc.qt.io/qtforpython-5/PySide2/QtCore/QVariantAnimation.html).
 
-<img alt="Button Example" src="../img/ButtonExample.gif" width="400"/>
+<img alt="Button Example" src="../img/ButtonExample.gif" height="300"/>
 
 ## Constructors & Methods
 
@@ -16,7 +16,7 @@ Button an inherited class of [QPushButton](https://doc.qt.io/qtforpython-5/PySid
 
 
 
-## Button
+## `Button`()
 
 Create new Button object.
 
@@ -70,7 +70,7 @@ Button(
 ### Returns:
 - *Button obj*
 
-## setBorder
+## `setBorder`()
 
 Set button border properties.
 
@@ -96,7 +96,7 @@ setBorder(
 ### Returns:
 - *None*
 
-## setColors
+## `setColors`()
 
 Set button colors.
 
@@ -122,7 +122,7 @@ setColors(
 ### Returns:
 - *None*
 
-## setFont
+## `setFont`()
 
 Set button text font properties.
 

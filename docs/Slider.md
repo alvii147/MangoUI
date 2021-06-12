@@ -2,7 +2,7 @@
 
 Slider an inherited class of [QStackedWidget](https://doc.qt.io/archives/qtforpython-5.12/PySide2/QtWidgets/QStackedWidget.html) that supports slide navigation between stacked widgets.
 
-<img alt="Slider Example" src="../img/SliderExample.gif" width="400"/>
+<img alt="Slider Example" src="../img/SliderExample.gif" height="300"/>
 
 ## Constructors & Methods
 
@@ -24,7 +24,7 @@ Slider an inherited class of [QStackedWidget](https://doc.qt.io/archives/qtforpy
 
 
 
-## Slider
+## `Slider`()
 
 Create new Slider object.
 
@@ -58,7 +58,7 @@ Slider(
 ### Returns:
 - *Slider obj*
 
-## setAnimationType
+## `setAnimationType`()
 
 Set animation type.
 
@@ -74,7 +74,7 @@ setAnimationType(animationType)
 ### Returns:
 - *None*
 
-## setDirection
+## `setDirection`()
 
 Set direction of animation.
 
@@ -90,7 +90,7 @@ setDirection(direction)
 ### Returns:
 - *None*
 
-## setDuration
+## `setDuration`()
 
 Set animation duration.
 
@@ -106,7 +106,7 @@ setDuration(duration)
 ### Returns:
 - *None*
 
-## setWrap
+## `setWrap`()
 
 Set animation duration.
 
@@ -122,7 +122,7 @@ setWrap(wrap)
 ### Returns:
 - *None*
 
-## slideIndex
+## `slideIndex`()
 
 Move to slide by index.
 
@@ -138,7 +138,7 @@ slideIndex(index)
 ### Returns:
 - *None*
 
-## slideNext
+## `slideNext`()
 
 Move to next slide.
 
@@ -149,7 +149,7 @@ slideNext()
 ### Returns:
 - *None*
 
-## slidePrevious
+## `slidePrevious`()
 
 Move to previous slide.
 
