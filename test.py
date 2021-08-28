@@ -1,44 +1,50 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout
+
 from MangoUI import Button
-from MangoUI import Canvas
 
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.width = 800
-        self.height = 600
-        screenSizeX = 1920
-        screenSizeY = 1080
-        self.xPos = int((screenSizeX/2) - (self.width/2))
-        self.yPos = -800
+        self.width = 150
+        self.height = 150
+        self.xPos = 600
+        self.yPos = 400
         self.initUI()
 
     def initUI(self):
         self.setGeometry(self.xPos, self.yPos, self.width, self.height)
-        self.setFixedSize(self.width, self.height)
-        self.setWindowTitle('Test Window')
-        self.setStyleSheet(f'''
-            background-color: rgb(255, 255, 255);
-        ''')
+        self.vBoxLayout = QVBoxLayout()
+        
+        self.button = Button(
+            borderWidth = 1,
+            borderRadius = 4,
+        )
+        self.button.setText('Default Button')
+        self.vBoxLayout.addWidget(self.button)
 
-        self.clearButton = Button(self)
-        self.clearButton.move(20, 20)
-        self.clearButton.resize(100, 30)
-        self.clearButton.setText('Clear')
-        self.clearButton.clicked.connect(self.clearCanvas)
-        self.clearButton.setPrimaryColor((0, 0, 51))
-        self.clearButton.setSecondaryColor((204, 204, 255))
-        self.clearButton.setParentBackgroundColor((255, 255, 255))
-        self.clearButton.setBorder(borderRadius = 9)
+        self.blueButton = Button(
+            primaryColor  = (17, 46, 133),
+            secondaryColor = (202, 209, 232),
+            borderWidth = 1,
+            borderRadius = 4,
+        )
+        self.blueButton.setText('Blue Button')
+        self.vBoxLayout.addWidget(self.blueButton)
 
-        self.canvas = Canvas(self, width = 450, height = 450, canvasColor = (230, 230, 255))
-        self.canvas.move(300, 20)
+        self.redButton = Button(
+            primaryColor  = (171, 3, 3),
+            secondaryColor = (247, 173, 173),
+            borderWidth = 1,
+            borderRadius = 4,
+        )
+        self.redButton.setText('Red Button')
+        self.vBoxLayout.addWidget(self.redButton)
 
+        self.centralWidget = QWidget(self)
+        self.centralWidget.setLayout(self.vBoxLayout)
+        self.setCentralWidget(self.centralWidget)
         self.show()
-
-    def clearCanvas(self):
-        self.canvas.clearCanvas()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
