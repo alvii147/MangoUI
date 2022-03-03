@@ -43,16 +43,16 @@
 
 MangoUI is built on top of [PyQt6](https://pypi.org/project/PyQt6/).
 
-Install dependencies:
-
-```
-pip3 install -r requirements.txt
-```
-
 Clone this repository:
 
-```
+```bash
 git clone https://github.com/alvii147/MangoUI.git
+```
+
+Install dependencies:
+
+```bash
+pip3 install -r requirements.txt
 ```
 
 # Button
