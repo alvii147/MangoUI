@@ -1,6 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QLabel
-from PyQt5.QtCore import Qt
+from PyQt6.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QLabel
+from PyQt6.QtCore import Qt
 
 from MangoUI import Canvas
 
@@ -26,7 +26,7 @@ class Window(QMainWindow):
             borderWidth = 2,
             borderColor = (21, 21, 21)
         )
-        self.vBoxLayout.addWidget(self.canvas, alignment = Qt.AlignCenter)
+        self.vBoxLayout.addWidget(self.canvas, alignment = Qt.AlignmentFlag.AlignCenter)
 
         self.centralWidget = QWidget(self)
         self.centralWidget.setLayout(self.vBoxLayout)
@@ -36,4 +36,4 @@ class Window(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWin = Window()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

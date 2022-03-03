@@ -1,14 +1,14 @@
-from PyQt5.QtWidgets import QStackedWidget
-from PyQt5.QtCore import Qt, QEasingCurve, QPoint, pyqtSlot, QParallelAnimationGroup, QPropertyAnimation, QAbstractAnimation
+from PyQt6.QtWidgets import QStackedWidget
+from PyQt6.QtCore import Qt, QEasingCurve, QPoint, pyqtSlot, QParallelAnimationGroup, QPropertyAnimation, QAbstractAnimation
 
 class Slider(QStackedWidget):
     '''Slider an inherited class of QStackedWidget that supports slide navigation between stacked widgets.'''
     def __init__(
         self,
         parent = None,
-        direction = Qt.Horizontal,
+        direction = Qt.Orientation.Horizontal,
         duration = 500,
-        animationType = QEasingCurve.OutCubic,
+        animationType = QEasingCurve.Type.OutCubic,
         wrap = False,
     ):
         '''Create new Slider object.
@@ -143,7 +143,7 @@ class Slider(QStackedWidget):
         offsetY = self.frameRect().height()
         self.widget(i_next).setGeometry(self.frameRect())
 
-        if self.direction == Qt.Horizontal:
+        if self.direction == Qt.Orientation.Horizontal:
             if i < i_next:
                 offsetX = -offsetX
                 offsetY = 0
@@ -181,7 +181,7 @@ class Slider(QStackedWidget):
         self.nextSlide = i_next
         self.currentSlide = i
         self.active = True
-        animationGroup.start(QAbstractAnimation.DeleteWhenStopped)
+        animationGroup.start(QAbstractAnimation.DeletionPolicy.DeleteWhenStopped)
 
     @pyqtSlot()
     def animationDoneSlot(self):

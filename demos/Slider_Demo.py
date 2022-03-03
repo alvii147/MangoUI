@@ -1,6 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QWidget
-from PyQt5.QtCore import Qt, QEasingCurve
+from PyQt6.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QWidget
+from PyQt6.QtCore import Qt, QEasingCurve
 
 from MangoUI import Slider
 
@@ -18,27 +18,27 @@ class Window(QMainWindow):
         self.vBoxLayout = QVBoxLayout()
 
         self.slider = Slider(
-            direction = Qt.Horizontal,
+            direction = Qt.Orientation.Horizontal,
             duration = 750,
-            animationType = QEasingCurve.OutQuad,
+            animationType = QEasingCurve.Type.OutQuad,
             wrap = False,
         )
 
         self.label1 = QLabel()
         self.label1.setText('First Slide')
-        self.label1.setAlignment(Qt.AlignCenter)
+        self.label1.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label1.setStyleSheet('QLabel{background-color: rgb(245, 177, 66); color: rgb(21, 21, 21); font: 25pt;}')
         self.slider.addWidget(self.label1)
 
         self.label2 = QLabel()
         self.label2.setText('Second Slide')
-        self.label2.setAlignment(Qt.AlignCenter)
+        self.label2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label2.setStyleSheet('QLabel{background-color: rgb(21, 21, 21); color: rgb(245, 177, 66); font: 25pt;}')
         self.slider.addWidget(self.label2)
 
         self.label3 = QLabel()
         self.label3.setText('Third Slide')
-        self.label3.setAlignment(Qt.AlignCenter)
+        self.label3.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label3.setStyleSheet('QLabel{background-color: rgb(93, 132, 48); color: rgb(245, 177, 66); font: 25pt;}')
         self.slider.addWidget(self.label3)
 
@@ -66,4 +66,4 @@ class Window(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWin = Window()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

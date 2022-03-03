@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QPushButton
-from PyQt5.QtCore import Qt, QVariantAnimation, QAbstractAnimation
-from PyQt5.QtGui import QCursor, QColor
+from PyQt6.QtWidgets import QPushButton
+from PyQt6.QtCore import Qt, QVariantAnimation, QAbstractAnimation
+from PyQt6.QtGui import QCursor, QColor
 from MangoUI.utils.ColorOps import to_RGBAtuple
 
 class Button(QPushButton):
@@ -41,7 +41,7 @@ class Button(QPushButton):
         else:
             super().__init__()
 
-        self.setCursor(QCursor(Qt.PointingHandCursor))
+        self.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
         self.primaryColor = to_RGBAtuple(primaryColor)
         self.secondaryColor = to_RGBAtuple(secondaryColor)
@@ -83,7 +83,7 @@ class Button(QPushButton):
         self.setStyleSheet(self.styleSheet)
 
     def onHover(self, color):
-        if self.animation.direction() == QAbstractAnimation.Forward:
+        if self.animation.direction() == QAbstractAnimation.Direction.Forward:
             self.color = self.primaryColor
         else:
             self.color = self.secondaryColor
@@ -91,12 +91,12 @@ class Button(QPushButton):
         self.renderStyleSheet()
 
     def enterEvent(self, event):
-        self.animation.setDirection(QAbstractAnimation.Backward)
+        self.animation.setDirection(QAbstractAnimation.Direction.Backward)
         self.animation.start()
         super().enterEvent(event)
 
     def leaveEvent(self, event):
-        self.animation.setDirection(QAbstractAnimation.Forward)
+        self.animation.setDirection(QAbstractAnimation.Direction.Forward)
         self.animation.start()
         super().leaveEvent(event)
 

@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout
+from PyQt6.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout
 
 from MangoUI import Button
 
@@ -49,4 +49,4 @@ class Window(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWin = Window()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

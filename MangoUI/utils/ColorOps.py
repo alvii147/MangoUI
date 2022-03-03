@@ -1,5 +1,5 @@
 import re
-from PyQt5.QtGui import QColor
+from PyQt6.QtGui import QColor
 
 def RGBAstr_to_RGBAtuple(s):
     if not isinstance(s, str):
@@ -148,7 +148,7 @@ def to_RGBAtuple(color):
             try:
                 return HEXstr_to_RGBAtuple(color)
             except ValueError:
-                raise ValueError(f'Invalid string, {s}')
+                raise ValueError(f'Invalid string, {color}')
     elif isinstance(color, int):
         return RGBAint_to_RGBAtuple(color)
     elif isinstance(color, QColor):

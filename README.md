@@ -1,4 +1,4 @@
-![QSharpTools Logo](img/MangoUILogoLight.png)
+![MangoUI Logo](img/MangoUILogoLight.png)
 
 # Overview
 
@@ -38,9 +38,6 @@
 	</td>
 </tr>
 </table>
-
-
-
 
 # Installation & Setup
 
@@ -118,6 +115,7 @@ if __name__ == '__main__':
     myWin = Window()
     sys.exit(app.exec_())
 ```
+
 <img src="img/ButtonExample.gif" alt="Button Example" width="200"/>
 
 # Canvas

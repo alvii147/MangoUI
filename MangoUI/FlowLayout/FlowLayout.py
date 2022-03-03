@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QLayout, QSizePolicy
-from PyQt5.QtCore import Qt, QRect, QSize, QPoint
+from PyQt6.QtWidgets import QLayout, QSizePolicy
+from PyQt6.QtCore import Qt, QRect, QSize, QPoint
 
 class FlowLayout(QLayout):
     def __init__(
@@ -42,7 +42,7 @@ class FlowLayout(QLayout):
             return None
 
     def expandingDirections(self):
-        return Qt.Orientations(Qt.Orientation(0))
+        return Qt.Orientation(0)
 
     def hasHeightForWidth(self):
         return True
@@ -75,15 +75,15 @@ class FlowLayout(QLayout):
         for item in self.itemList:
             wid = item.widget()
             spaceX = self.spacing() + wid.style().layoutSpacing(
-                QSizePolicy.PushButton,
-                QSizePolicy.PushButton,
-                Qt.Horizontal,
+                QSizePolicy.ControlType.PushButton,
+                QSizePolicy.ControlType.PushButton,
+                Qt.Orientation.Horizontal,
             )
 
             spaceY = self.spacing() + wid.style().layoutSpacing(
-                QSizePolicy.PushButton,
-                QSizePolicy.PushButton,
-                Qt.Vertical,
+                QSizePolicy.ControlType.PushButton,
+                QSizePolicy.ControlType.PushButton,
+                Qt.Orientation.Vertical,
             )
 
             nextX = x + item.sizeHint().width() + spaceX

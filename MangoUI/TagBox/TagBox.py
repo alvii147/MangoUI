@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QWidget, QLabel, QHBoxLayout
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPixmap, QCursor
+from PyQt6.QtWidgets import QWidget, QLabel, QHBoxLayout
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QPixmap, QCursor
 from MangoUI import FlowLayout
 from MangoUI.utils.ColorOps import to_RGBAtuple
 
@@ -98,10 +98,10 @@ class TagBox(QWidget):
 
     def displayTag(self, tagName):
         tagWidget = QWidget()
-        tagWidget.setAttribute(Qt.WA_StyledBackground, True)
-        tagWidget.enterEvent = lambda e : self.setCursor(QCursor(Qt.PointingHandCursor))
-        tagWidget.leaveEvent = lambda e : self.setCursor(QCursor(Qt.ArrowCursor))
-        tagWidget.mouseReleaseEvent = lambda e : self.removeTag(self.flowLayout.indexOf(tagWidget))
+        tagWidget.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, True)
+        tagWidget.enterEvent = lambda e : self.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        tagWidget.leaveEvent = lambda e : self.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
+        tagWidget.mouseReleaseEvent = lambda e : self.removeTag(self.flowLayout.indexOf(tagWidget), returnTag=False)
         self.renderStyleSheet(tagWidget)
 
         hBoxTag = QHBoxLayout()
@@ -147,11 +147,12 @@ class TagBox(QWidget):
             return True
         return False
 
-    def removeTag(self, index):
+    def removeTag(self, index, returnTag=True):
         '''Remove tag by index.
 
         Parameters:
             index (int): index position of tag to remove
+            returnTag (bool): whether or not to return popped tag
 
         Returns:
             str
@@ -160,7 +161,8 @@ class TagBox(QWidget):
         removedTag = self.tagList.pop(index)
         self.initTagBox()
 
-        return removedTag
+        if returnTag:
+            return removedTag
 
     def clearTags(self):
         '''Clear all tags.

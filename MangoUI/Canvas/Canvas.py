@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QLabel
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QColor, QPainter, QPen, QBrush, QPixmap
+from PyQt6.QtWidgets import QLabel
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QColor, QPainter, QPen, QBrush, QPixmap
 from MangoUI.utils.ColorOps import to_RGBAtuple
 
 class Canvas(QLabel):
@@ -12,7 +12,7 @@ class Canvas(QLabel):
         height = 200,
         penColor = (25, 25, 25, 255),
         canvasColor = (255, 247, 242, 255),
-        strokeStyle = Qt.SolidLine,
+        strokeStyle = Qt.PenStyle.SolidLine,
         strokeWidth = 3,
         borderStyle = 'solid',
         borderColor = (0, 0, 0, 255),
@@ -62,29 +62,29 @@ class Canvas(QLabel):
 
     def mouseMoveEvent(self, event):
         if self.xCache == None:
-            self.xCache = event.x()
-            self.yCache = event.y()
+            self.xCache = event.position().x()
+            self.yCache = event.position().y()
         else:
-            painter = QPainter(self.pixmap())
+            painter = QPainter(self.canvas)
             pen = painter.pen()
             pen.setWidth(self.strokeWidth)
             pen.setColor(QColor(*self.color))
             pen.setStyle(self.strokeStyle)
             painter.setPen(pen)
-            painter.drawLine(self.xCache, self.yCache, event.x(), event.y())
+            painter.drawLine(self.xCache, self.yCache, event.position().x(), event.position().y())
             painter.end()
-            self.update()
-            self.xCache = event.x()
-            self.yCache = event.y()
+            self.setPixmap(self.canvas)
+            self.xCache = event.position().x()
+            self.yCache = event.position().y()
 
     def mouseReleaseEvent(self, event):
         self.xCache = None
         self.yCache = None
 
     def setupPixmap(self):
-        pixmap = QPixmap(self.width, self.height)
-        pixmap.fill(QColor(*self.backgroundColor))
-        self.setPixmap(pixmap)
+        self.canvas = QPixmap(self.width, self.height)
+        self.canvas.fill(QColor(*self.backgroundColor))
+        self.setPixmap(self.canvas)
 
     def renderStyleSheet(self):
         self.styleSheet = f'''
