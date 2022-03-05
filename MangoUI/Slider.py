@@ -1,13 +1,13 @@
 from PyQt6.QtWidgets import QStackedWidget
 from PyQt6.QtCore import (
     Qt,
-    QEasingCurve,
     QPoint,
     pyqtSlot,
     QParallelAnimationGroup,
     QPropertyAnimation,
     QAbstractAnimation,
 )
+import PyQt6
 
 
 class Slider(QStackedWidget):
@@ -20,10 +20,10 @@ class Slider(QStackedWidget):
         Parent object that contains this widget. Passing this ensures that
         destroying the parent also destroys this widget.
 
-    slideDirection : Qt.Orientation.Horizontal
+    slideDirection : PyQt6.QtCore.Qt.Orientation
         Sliding animation direction.
 
-    animationType : PyQt6.QtCore.Qt.QEasingCurve.Type
+    animationType : PyQt6.QtCore.QEasingCurve.Type
         Sliding animation type.
 
     animationDuration : int
@@ -37,8 +37,8 @@ class Slider(QStackedWidget):
     def __init__(
         self,
         parent=None,
-        slideDirection=Qt.Orientation.Horizontal,
-        animationType=QEasingCurve.Type.OutCubic,
+        slideDirection=PyQt6.QtCore.Qt.Orientation.Horizontal,
+        animationType=PyQt6.QtCore.QEasingCurve.Type.OutCubic,
         animationDuration=500,
         wrapAround=False,
     ):

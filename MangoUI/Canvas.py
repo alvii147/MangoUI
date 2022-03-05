@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QLabel
-from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QColor, QPainter, QPixmap
+import PyQt6
 from MangoUI.utils.ColorOps import to_RGBAtuple
 
 
@@ -30,7 +30,7 @@ class Canvas(QLabel):
         representing RGBA values, HTML RGBA string, HTML hexadecimal string, or
         QColor object.
 
-    strokeStyle : PyQt6.QtCore.Qt.QPenStyle
+    strokeStyle : PyQt6.QtCore.Qt.PenStyle
         Pen stroke style.
 
     strokeWidth : int
@@ -55,7 +55,7 @@ class Canvas(QLabel):
         height=200,
         canvasColor=(255, 247, 242, 255),
         penColor=(25, 25, 25, 255),
-        strokeStyle=Qt.PenStyle.SolidLine,
+        strokeStyle=PyQt6.QtCore.Qt.PenStyle.SolidLine,
         strokeWidth=3,
         borderStyle='solid',
         borderColor=(0, 0, 0, 255),

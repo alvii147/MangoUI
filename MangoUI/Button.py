@@ -3,9 +3,9 @@ from PyQt6.QtCore import (
     Qt,
     QVariantAnimation,
     QAbstractAnimation,
-    QEasingCurve,
 )
 from PyQt6.QtGui import QCursor, QColor
+import PyQt6
 from MangoUI.utils.ColorOps import to_RGBAtuple
 
 
@@ -43,7 +43,7 @@ class Button(QPushButton):
         The button border is set to this color on press and is used to provide
         an illusion of compression on press.
 
-    animationType : PyQt6.QtCore.Qt.QEasingCurve.Type
+    animationType : PyQt6.QtCore.QEasingCurve.Type
         Button animation type.
 
     animationDuration : int
@@ -74,7 +74,7 @@ class Button(QPushButton):
         primaryColor=(21, 21, 21, 255),
         secondaryColor=(245, 177, 66, 255),
         parentBackgroundColor=(240, 240, 240, 255),
-        animationType=QEasingCurve.Type.OutCubic,
+        animationType=PyQt6.QtCore.QEasingCurve.Type.OutCubic,
         animationDuration=400,
         fontFamily='Verdana',
         fontSize=8,
