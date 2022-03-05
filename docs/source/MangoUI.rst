@@ -7,12 +7,12 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   MangoUI.Button
-   MangoUI.Canvas
-   MangoUI.FlowLayout
-   MangoUI.Slider
-   MangoUI.TagBox
-   MangoUI.utils
+   Button
+   Canvas
+   FlowLayout
+   Slider
+   TagBox
+   utils
 
 Module contents
 ---------------

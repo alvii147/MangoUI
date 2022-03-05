@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MangoUI.Button package &mdash; MangoUI  documentation</title>
+  <title>Button &mdash; MangoUI  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MangoUI.Canvas package" href="MangoUI.Canvas.html" />
+    <link rel="next" title="Canvas" href="Canvas.html" />
     <link rel="prev" title="MangoUI package" href="MangoUI.html" /> 
 </head>
 
@@ -39,20 +39,17 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">MangoUI</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="MangoUI.html">MangoUI package</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="MangoUI.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">MangoUI.Button package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="MangoUI.Canvas.html">MangoUI.Canvas package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="MangoUI.FlowLayout.html">MangoUI.FlowLayout package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="MangoUI.Slider.html">MangoUI.Slider package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="MangoUI.TagBox.html">MangoUI.TagBox package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="MangoUI.utils.html">MangoUI.utils package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="MangoUI.html">MangoUI package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="MangoUI.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Canvas.html">Canvas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FlowLayout.html">FlowLayout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Slider.html">Slider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TagBox.html">TagBox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html">ColorOps</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="MangoUI.html#module-MangoUI">Module contents</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="MangoUI.html#module-MangoUI">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -71,11 +68,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">MangoUI</a> &raquo;</li>
           <li><a href="MangoUI.html">MangoUI package</a> &raquo;</li>
-      <li>MangoUI.Button package</li>
+      <li>Button</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/MangoUI.Button.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Button.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -83,13 +79,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="mangoui-button-package">
-<h1>MangoUI.Button package<a class="headerlink" href="#mangoui-button-package" title="Permalink to this headline"></a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
-</section>
-<section id="module-MangoUI.Button.Button">
-<span id="mangoui-button-button-module"></span><h2>MangoUI.Button.Button module<a class="headerlink" href="#module-MangoUI.Button.Button" title="Permalink to this headline"></a></h2>
+  <section id="module-MangoUI.Button.Button">
+<span id="button"></span><h1>Button<a class="headerlink" href="#module-MangoUI.Button.Button" title="Permalink to this headline"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="MangoUI.Button.Button.Button">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MangoUI.Button.Button.</span></span><span class="sig-name descname"><span class="pre">Button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primaryColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(21,</span> <span class="pre">21,</span> <span class="pre">21,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondaryColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(245,</span> <span class="pre">177,</span> <span class="pre">66,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parentBackgroundColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(240,</span> <span class="pre">240,</span> <span class="pre">240,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animationType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Type.OutCubic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animationDuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontFamily</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Verdana'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontWeight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'solid'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderRadius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button" title="Permalink to this definition"></a></dt>
@@ -250,17 +241,13 @@ provide an illusion of compression on press.</p>
 </dd></dl>
 
 </section>
-<section id="module-MangoUI.Button">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-MangoUI.Button" title="Permalink to this headline"></a></h2>
-</section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="MangoUI.html" class="btn btn-neutral float-left" title="MangoUI package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="MangoUI.Canvas.html" class="btn btn-neutral float-right" title="MangoUI.Canvas package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Canvas.html" class="btn btn-neutral float-right" title="Canvas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
