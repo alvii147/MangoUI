@@ -2,7 +2,7 @@ Button
 ======
 
 .. image:: ../img/ButtonExample.gif
-   :width: 200px
+   :width: 200
 
 .. automodule:: MangoUI.Button
    :members:

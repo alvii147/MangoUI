@@ -2,7 +2,7 @@ Canvas
 ======
 
 .. image:: ../img/CanvasExample.gif
-   :width: 200px
+   :width: 200
 
 .. automodule:: MangoUI.Canvas
    :members:
