@@ -120,11 +120,11 @@ class FlowLayout(QLayout):
 
         Returns
         -------
-        bool
+        PyQt6.QtCore.Qt.Orientation
             Indicates whether this layout can make use of more space.
         """
 
-        return bool(Qt.Orientation(0))
+        return Qt.Orientation(0)
 
     def hasHeightForWidth(self):
         """
