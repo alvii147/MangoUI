@@ -1,8 +1,8 @@
-![MangoUI Logo](img/MangoUILogoLight.png)
+![MangoUI Logo](docs/img/MangoUILogoLight.png)
 
 # Overview
 
-**Mango.UI** is a library for **PyQt6** that includes sharper-looking custom-styled widgets for better desktop UI development.
+**Mango.UI** is a library for **PyQt6** that includes sharper-looking custom-styled widgets for better desktop UI development. See [documentation](https://alvii147.github.io/MangoUI/build/html/index.html) to learn more.
 
 <table>
 <tr>
@@ -15,10 +15,10 @@
 </tr>
 <tr>
     <td>
-    	<p align="center"><img src="img/ButtonExample.gif" alt="Button Example" width="200"/></p>
+    	<p align="center"><img src="docs/img/ButtonExample.gif" alt="Button Example" width="200"/></p>
     </td>
     <td>
-    	<p align="center"><img src="img/CanvasExample.gif" alt="Canvas Example" width="200"/></p>
+    	<p align="center"><img src="docs/img/CanvasExample.gif" alt="Canvas Example" width="200"/></p>
     </td>
 </tr>
 <tr>
@@ -31,10 +31,10 @@
 </tr>
 <tr>
 	<td>
-		<p align="center"><img src="img/SliderExample.gif" alt="Slider Example" width="300"/></p>
+		<p align="center"><img src="docs/img/SliderExample.gif" alt="Slider Example" width="300"/></p>
 	</td>
 	<td>
-        <p align="center"><img src="img/TagBoxExample.gif" alt="TagBox Example" width="400"/></p>
+        <p align="center"><img src="docs/img/TagBoxExample.gif" alt="TagBox Example" width="400"/></p>
 	</td>
 </tr>
 </table>
@@ -56,8 +56,6 @@ pip3 install -r requirements.txt
 ```
 
 # Button
-
-See [documentation](docs/Button.md).
 
 ## Example Use
 
@@ -116,11 +114,9 @@ if __name__ == '__main__':
     sys.exit(app.exec())
 ```
 
-<img src="img/ButtonExample.gif" alt="Button Example" width="200"/>
+<img src="docs/img/ButtonExample.gif" alt="Button Example" width="200"/>
 
 # Canvas
-
-See [documentation](docs/Canvas.md).
 
 ## Example Use
 
@@ -166,11 +162,9 @@ if __name__ == '__main__':
     sys.exit(app.exec())
 ```
 
-<img src="img/CanvasExample.gif" alt="Canvas Example" width="200"/>
+<img src="docs/img/CanvasExample.gif" alt="Canvas Example" width="200"/>
 
 # Slider
-
-See [documentation](docs/Slider.md).
 
 ## Example Use
 
@@ -246,11 +240,9 @@ if __name__ == '__main__':
     sys.exit(app.exec())
 ```
 
-<img src="img/SliderExample.gif" alt="Slider Example" width="400"/>
+<img src="docs/img/SliderExample.gif" alt="Slider Example" width="400"/>
 
 # TagBox
-
-See [documentation](docs/TagBox.md).
 
 ## Example Use
 
@@ -304,4 +296,4 @@ if __name__ == '__main__':
     sys.exit(app.exec())
 ```
 
-<img src="img/TagBoxExample.gif" alt="TagBox Example" width="500"/>
+<img src="docs/img/TagBoxExample.gif" alt="TagBox Example" width="500"/>
