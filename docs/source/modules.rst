@@ -5,4 +5,3 @@ MangoUI
    :maxdepth: 4
 
    MangoUI
-   test
