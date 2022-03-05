@@ -1,7 +1,7 @@
 TagBox
 ======
 
-.. automodule:: MangoUI.TagBox.TagBox
+.. automodule:: MangoUI.TagBox
    :members:
    :undoc-members:
    :show-inheritance:

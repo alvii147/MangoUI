@@ -39,17 +39,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="MangoUI.html">MangoUI package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="MangoUI.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Button.html">Button</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Canvas.html">Canvas</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">FlowLayout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Slider.html">Slider</a></li>
-<li class="toctree-l3"><a class="reference internal" href="TagBox.html">TagBox</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utils.html">ColorOps</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="MangoUI.html#module-MangoUI">Module contents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="MangoUI.html">MangoUI</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Canvas.html">Canvas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">FlowLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TagBox.html">TagBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">ColorOps</a></li>
 </ul>
 </li>
 </ul>
@@ -68,7 +64,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="MangoUI.html">MangoUI package</a> &raquo;</li>
+          <li><a href="MangoUI.html">MangoUI</a> &raquo;</li>
       <li>FlowLayout</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/FlowLayout.rst.txt" rel="nofollow"> View page source</a>
@@ -79,11 +75,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-MangoUI.FlowLayout.FlowLayout">
-<span id="flowlayout"></span><h1>FlowLayout<a class="headerlink" href="#module-MangoUI.FlowLayout.FlowLayout" title="Permalink to this headline"></a></h1>
+  <section id="module-MangoUI.FlowLayout">
+<span id="flowlayout"></span><h1>FlowLayout<a class="headerlink" href="#module-MangoUI.FlowLayout" title="Permalink to this headline"></a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MangoUI.FlowLayout.FlowLayout.</span></span><span class="sig-name descname"><span class="pre">FlowLayout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MangoUI.FlowLayout.</span></span><span class="sig-name descname"><span class="pre">FlowLayout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt6.QtWidgets.QLayout</span></code></p>
 <p>Flow layout widget, as outlined in the official Qt documentation and
 implemented by Tong Xiao.</p>
@@ -100,8 +96,8 @@ destroying the parent also destroys this widget.</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.addItem">
-<span class="sig-name descname"><span class="pre">addItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.addItem" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.addItem">
+<span class="sig-name descname"><span class="pre">addItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.addItem" title="Permalink to this definition"></a></dt>
 <dd><p>Add widget to layout.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -111,8 +107,8 @@ destroying the parent also destroys this widget.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.count" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.count" title="Permalink to this definition"></a></dt>
 <dd><p>Get number of items.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -125,8 +121,8 @@ destroying the parent also destroys this widget.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.doLayout">
-<span class="sig-name descname"><span class="pre">doLayout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">testOnly</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.doLayout" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.doLayout">
+<span class="sig-name descname"><span class="pre">doLayout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">testOnly</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.doLayout" title="Permalink to this definition"></a></dt>
 <dd><p>Layout all items.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -145,8 +141,8 @@ destroying the parent also destroys this widget.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.expandingDirections">
-<span class="sig-name descname"><span class="pre">expandingDirections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.expandingDirections" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.expandingDirections">
+<span class="sig-name descname"><span class="pre">expandingDirections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.expandingDirections" title="Permalink to this definition"></a></dt>
 <dd><p>Returns whether this layout can make use of more space than
 <code class="docutils literal notranslate"><span class="pre">sizeHint</span></code> indicates.</p>
 <dl class="field-list simple">
@@ -160,8 +156,8 @@ destroying the parent also destroys this widget.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.hasHeightForWidth">
-<span class="sig-name descname"><span class="pre">hasHeightForWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.hasHeightForWidth" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.hasHeightForWidth">
+<span class="sig-name descname"><span class="pre">hasHeightForWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.hasHeightForWidth" title="Permalink to this definition"></a></dt>
 <dd><p>Returns True if this layout’s preferred height depends on its width;
 otherwise returns False.</p>
 <dl class="field-list simple">
@@ -175,8 +171,8 @@ otherwise returns False.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.heightForWidth">
-<span class="sig-name descname"><span class="pre">heightForWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.heightForWidth" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.heightForWidth">
+<span class="sig-name descname"><span class="pre">heightForWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.heightForWidth" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the preferred height for this layout item, given the width,
 which is not used in this default implementation.</p>
 <dl class="field-list simple">
@@ -193,8 +189,8 @@ which is not used in this default implementation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.itemAt">
-<span class="sig-name descname"><span class="pre">itemAt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.itemAt" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.itemAt">
+<span class="sig-name descname"><span class="pre">itemAt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.itemAt" title="Permalink to this definition"></a></dt>
 <dd><p>Get item by index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -210,8 +206,8 @@ which is not used in this default implementation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.minimumSize">
-<span class="sig-name descname"><span class="pre">minimumSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.minimumSize" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.minimumSize">
+<span class="sig-name descname"><span class="pre">minimumSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.minimumSize" title="Permalink to this definition"></a></dt>
 <dd><p>Get the widget’s minimum size.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -224,8 +220,8 @@ which is not used in this default implementation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.setGeometry">
-<span class="sig-name descname"><span class="pre">setGeometry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.setGeometry" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.setGeometry">
+<span class="sig-name descname"><span class="pre">setGeometry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.setGeometry" title="Permalink to this definition"></a></dt>
 <dd><p>Set geometry of the widget relative to its parent and excluding the
 window frame.</p>
 <dl class="field-list simple">
@@ -236,8 +232,8 @@ window frame.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.sizeHint">
-<span class="sig-name descname"><span class="pre">sizeHint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.sizeHint" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.sizeHint">
+<span class="sig-name descname"><span class="pre">sizeHint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.sizeHint" title="Permalink to this definition"></a></dt>
 <dd><p>Get the recommended size for the widget.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -250,8 +246,8 @@ window frame.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.FlowLayout.takeAt">
-<span class="sig-name descname"><span class="pre">takeAt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.FlowLayout.takeAt" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.FlowLayout.FlowLayout.takeAt">
+<span class="sig-name descname"><span class="pre">takeAt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.FlowLayout.FlowLayout.takeAt" title="Permalink to this definition"></a></dt>
 <dd><p>Pop item by index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

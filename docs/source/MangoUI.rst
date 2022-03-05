@@ -1,8 +1,5 @@
-MangoUI package
-===============
-
-Subpackages
------------
+MangoUI
+=======
 
 .. toctree::
    :maxdepth: 4
@@ -13,11 +10,3 @@ Subpackages
    Slider
    TagBox
    utils
-
-Module contents
----------------
-
-.. automodule:: MangoUI
-   :members:
-   :undoc-members:
-   :show-inheritance:

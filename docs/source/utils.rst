@@ -1,7 +1,7 @@
 ColorOps
 ========
 
-.. automodule:: MangoUI.utils.ColorOps
+.. automodule:: MangoUI.utils
    :members:
    :undoc-members:
    :show-inheritance:

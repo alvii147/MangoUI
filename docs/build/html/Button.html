@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Canvas" href="Canvas.html" />
-    <link rel="prev" title="MangoUI package" href="MangoUI.html" /> 
+    <link rel="prev" title="MangoUI" href="MangoUI.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,17 +39,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="MangoUI.html">MangoUI package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="MangoUI.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Button</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Canvas.html">Canvas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FlowLayout.html">FlowLayout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Slider.html">Slider</a></li>
-<li class="toctree-l3"><a class="reference internal" href="TagBox.html">TagBox</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utils.html">ColorOps</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="MangoUI.html#module-MangoUI">Module contents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="MangoUI.html">MangoUI</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Canvas.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FlowLayout.html">FlowLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TagBox.html">TagBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">ColorOps</a></li>
 </ul>
 </li>
 </ul>
@@ -68,7 +64,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="MangoUI.html">MangoUI package</a> &raquo;</li>
+          <li><a href="MangoUI.html">MangoUI</a> &raquo;</li>
       <li>Button</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Button.rst.txt" rel="nofollow"> View page source</a>
@@ -79,11 +75,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-MangoUI.Button.Button">
-<span id="button"></span><h1>Button<a class="headerlink" href="#module-MangoUI.Button.Button" title="Permalink to this headline"></a></h1>
+  <section id="module-MangoUI.Button">
+<span id="button"></span><h1>Button<a class="headerlink" href="#module-MangoUI.Button" title="Permalink to this headline"></a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="MangoUI.Button.Button.Button">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MangoUI.Button.Button.</span></span><span class="sig-name descname"><span class="pre">Button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primaryColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(21,</span> <span class="pre">21,</span> <span class="pre">21,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondaryColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(245,</span> <span class="pre">177,</span> <span class="pre">66,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parentBackgroundColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(240,</span> <span class="pre">240,</span> <span class="pre">240,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animationType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Type.OutCubic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animationDuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontFamily</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Verdana'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontWeight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'solid'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderRadius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Button.Button">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MangoUI.Button.</span></span><span class="sig-name descname"><span class="pre">Button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primaryColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(21,</span> <span class="pre">21,</span> <span class="pre">21,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondaryColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(245,</span> <span class="pre">177,</span> <span class="pre">66,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parentBackgroundColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(240,</span> <span class="pre">240,</span> <span class="pre">240,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animationType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Type.OutCubic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animationDuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontFamily</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Verdana'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontWeight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'solid'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderRadius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt6.QtWidgets.QPushButton</span></code></p>
 <p>Multi-colored, animated button.</p>
 <dl class="field-list simple">
@@ -121,8 +117,8 @@ an illusion of compression on press.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Button.Button.Button.animateBackground">
-<span class="sig-name descname"><span class="pre">animateBackground</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currentBackgroundColor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button.animateBackground" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Button.Button.animateBackground">
+<span class="sig-name descname"><span class="pre">animateBackground</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currentBackgroundColor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.animateBackground" title="Permalink to this definition"></a></dt>
 <dd><p>Update background color during animation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -132,8 +128,8 @@ an illusion of compression on press.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Button.Button.Button.animateText">
-<span class="sig-name descname"><span class="pre">animateText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currentTextColor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button.animateText" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Button.Button.animateText">
+<span class="sig-name descname"><span class="pre">animateText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currentTextColor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.animateText" title="Permalink to this definition"></a></dt>
 <dd><p>Update text color during animation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -143,8 +139,8 @@ an illusion of compression on press.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Button.Button.Button.enterEvent">
-<span class="sig-name descname"><span class="pre">enterEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button.enterEvent" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Button.Button.enterEvent">
+<span class="sig-name descname"><span class="pre">enterEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.enterEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Override enter event signal method for widget to set animation
 direction and start animation.</p>
 <dl class="field-list simple">
@@ -155,8 +151,8 @@ direction and start animation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Button.Button.Button.leaveEvent">
-<span class="sig-name descname"><span class="pre">leaveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button.leaveEvent" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Button.Button.leaveEvent">
+<span class="sig-name descname"><span class="pre">leaveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.leaveEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Override leave event signal method for widget to set animation
 direction and start animation.</p>
 <dl class="field-list simple">
@@ -167,14 +163,14 @@ direction and start animation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Button.Button.Button.renderStyleSheet">
-<span class="sig-name descname"><span class="pre">renderStyleSheet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button.renderStyleSheet" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Button.Button.renderStyleSheet">
+<span class="sig-name descname"><span class="pre">renderStyleSheet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.renderStyleSheet" title="Permalink to this definition"></a></dt>
 <dd><p>Set QSS style sheet for widget using defined attributes.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Button.Button.Button.setBorder">
-<span class="sig-name descname"><span class="pre">setBorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">borderStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderRadius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button.setBorder" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Button.Button.setBorder">
+<span class="sig-name descname"><span class="pre">setBorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">borderStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderRadius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.setBorder" title="Permalink to this definition"></a></dt>
 <dd><p>Set button border properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -188,8 +184,8 @@ direction and start animation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Button.Button.Button.setColors">
-<span class="sig-name descname"><span class="pre">setColors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">primaryColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondaryColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parentBackgroundColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button.setColors" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Button.Button.setColors">
+<span class="sig-name descname"><span class="pre">setColors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">primaryColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondaryColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parentBackgroundColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.setColors" title="Permalink to this definition"></a></dt>
 <dd><p>Set button colors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -218,8 +214,8 @@ provide an illusion of compression on press.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Button.Button.Button.setFont">
-<span class="sig-name descname"><span class="pre">setFont</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontFamily</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontWeight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button.setFont" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Button.Button.setFont">
+<span class="sig-name descname"><span class="pre">setFont</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontFamily</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontWeight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.setFont" title="Permalink to this definition"></a></dt>
 <dd><p>Set button text font properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -233,8 +229,8 @@ provide an illusion of compression on press.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Button.Button.Button.setupAnimationColors">
-<span class="sig-name descname"><span class="pre">setupAnimationColors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.Button.setupAnimationColors" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Button.Button.setupAnimationColors">
+<span class="sig-name descname"><span class="pre">setupAnimationColors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Button.Button.setupAnimationColors" title="Permalink to this definition"></a></dt>
 <dd><p>Set up button colors and animations.</p>
 </dd></dl>
 
@@ -246,7 +242,7 @@ provide an illusion of compression on press.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="MangoUI.html" class="btn btn-neutral float-left" title="MangoUI package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MangoUI.html" class="btn btn-neutral float-left" title="MangoUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="Canvas.html" class="btn btn-neutral float-right" title="Canvas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

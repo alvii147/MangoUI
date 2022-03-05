@@ -39,17 +39,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="MangoUI.html">MangoUI package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="MangoUI.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Button.html">Button</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Canvas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FlowLayout.html">FlowLayout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Slider.html">Slider</a></li>
-<li class="toctree-l3"><a class="reference internal" href="TagBox.html">TagBox</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utils.html">ColorOps</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="MangoUI.html#module-MangoUI">Module contents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="MangoUI.html">MangoUI</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Button.html">Button</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FlowLayout.html">FlowLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TagBox.html">TagBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">ColorOps</a></li>
 </ul>
 </li>
 </ul>
@@ -68,7 +64,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="MangoUI.html">MangoUI package</a> &raquo;</li>
+          <li><a href="MangoUI.html">MangoUI</a> &raquo;</li>
       <li>Canvas</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Canvas.rst.txt" rel="nofollow"> View page source</a>
@@ -79,11 +75,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-MangoUI.Canvas.Canvas">
-<span id="canvas"></span><h1>Canvas<a class="headerlink" href="#module-MangoUI.Canvas.Canvas" title="Permalink to this headline"></a></h1>
+  <section id="module-MangoUI.Canvas">
+<span id="canvas"></span><h1>Canvas<a class="headerlink" href="#module-MangoUI.Canvas" title="Permalink to this headline"></a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.Canvas">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MangoUI.Canvas.Canvas.</span></span><span class="sig-name descname"><span class="pre">Canvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canvasColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(255,</span> <span class="pre">247,</span> <span class="pre">242,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">penColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(25,</span> <span class="pre">25,</span> <span class="pre">25,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strokeStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PenStyle.SolidLine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strokeWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'solid'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.Canvas" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MangoUI.Canvas.</span></span><span class="sig-name descname"><span class="pre">Canvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canvasColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(255,</span> <span class="pre">247,</span> <span class="pre">242,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">penColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(25,</span> <span class="pre">25,</span> <span class="pre">25,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strokeStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PenStyle.SolidLine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strokeWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'solid'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">255)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt6.QtWidgets.QLabel</span></code></p>
 <p>Canvas widget for drawing.</p>
 <dl class="field-list simple">
@@ -110,14 +106,14 @@ string, or QColor object.</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.Canvas.clearCanvas">
-<span class="sig-name descname"><span class="pre">clearCanvas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.Canvas.clearCanvas" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.clearCanvas">
+<span class="sig-name descname"><span class="pre">clearCanvas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.clearCanvas" title="Permalink to this definition"></a></dt>
 <dd><p>Clear canvas contents.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.Canvas.mouseMoveEvent">
-<span class="sig-name descname"><span class="pre">mouseMoveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.Canvas.mouseMoveEvent" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.mouseMoveEvent">
+<span class="sig-name descname"><span class="pre">mouseMoveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.mouseMoveEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Override mouse move event signal to draw on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -127,8 +123,8 @@ string, or QColor object.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.Canvas.mouseReleaseEvent">
-<span class="sig-name descname"><span class="pre">mouseReleaseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.Canvas.mouseReleaseEvent" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.mouseReleaseEvent">
+<span class="sig-name descname"><span class="pre">mouseReleaseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.mouseReleaseEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Override mouse release event signal to draw on canvas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -138,14 +134,14 @@ string, or QColor object.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.Canvas.renderStyleSheet">
-<span class="sig-name descname"><span class="pre">renderStyleSheet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.Canvas.renderStyleSheet" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.renderStyleSheet">
+<span class="sig-name descname"><span class="pre">renderStyleSheet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.renderStyleSheet" title="Permalink to this definition"></a></dt>
 <dd><p>Set QSS style sheet for widget using defined attributes.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.Canvas.resize">
-<span class="sig-name descname"><span class="pre">resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.Canvas.resize" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.resize">
+<span class="sig-name descname"><span class="pre">resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.resize" title="Permalink to this definition"></a></dt>
 <dd><p>Override resize method to set up new pixmap everytime the window is
 resized.</p>
 <dl class="field-list simple">
@@ -159,8 +155,8 @@ resized.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.Canvas.saveCanvas">
-<span class="sig-name descname"><span class="pre">saveCanvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.Canvas.saveCanvas" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.saveCanvas">
+<span class="sig-name descname"><span class="pre">saveCanvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.saveCanvas" title="Permalink to this definition"></a></dt>
 <dd><p>Save canvas content to image file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -170,8 +166,8 @@ resized.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.Canvas.setBorder">
-<span class="sig-name descname"><span class="pre">setBorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">borderStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.Canvas.setBorder" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.setBorder">
+<span class="sig-name descname"><span class="pre">setBorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">borderStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borderWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.setBorder" title="Permalink to this definition"></a></dt>
 <dd><p>Set canvas border properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -187,8 +183,8 @@ hexadecimal string, or QColor object.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.Canvas.setPen">
-<span class="sig-name descname"><span class="pre">setPen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">penColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strokeStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strokeWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.Canvas.setPen" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.setPen">
+<span class="sig-name descname"><span class="pre">setPen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">penColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strokeStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strokeWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.setPen" title="Permalink to this definition"></a></dt>
 <dd><p>Set pen properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -204,8 +200,8 @@ string, or QColor object.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.Canvas.setupPixmap">
-<span class="sig-name descname"><span class="pre">setupPixmap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.Canvas.setupPixmap" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Canvas.Canvas.setupPixmap">
+<span class="sig-name descname"><span class="pre">setupPixmap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Canvas.Canvas.setupPixmap" title="Permalink to this definition"></a></dt>
 <dd><p>Create and set new pixmap.</p>
 </dd></dl>
 

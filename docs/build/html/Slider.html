@@ -39,17 +39,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="MangoUI.html">MangoUI package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="MangoUI.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Button.html">Button</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Canvas.html">Canvas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FlowLayout.html">FlowLayout</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Slider</a></li>
-<li class="toctree-l3"><a class="reference internal" href="TagBox.html">TagBox</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utils.html">ColorOps</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="MangoUI.html#module-MangoUI">Module contents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="MangoUI.html">MangoUI</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Canvas.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FlowLayout.html">FlowLayout</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TagBox.html">TagBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">ColorOps</a></li>
 </ul>
 </li>
 </ul>
@@ -68,7 +64,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="MangoUI.html">MangoUI package</a> &raquo;</li>
+          <li><a href="MangoUI.html">MangoUI</a> &raquo;</li>
       <li>Slider</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Slider.rst.txt" rel="nofollow"> View page source</a>
@@ -79,11 +75,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-MangoUI.Slider.Slider">
-<span id="slider"></span><h1>Slider<a class="headerlink" href="#module-MangoUI.Slider.Slider" title="Permalink to this headline"></a></h1>
+  <section id="module-MangoUI.Slider">
+<span id="slider"></span><h1>Slider<a class="headerlink" href="#module-MangoUI.Slider" title="Permalink to this headline"></a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="MangoUI.Slider.Slider.Slider">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MangoUI.Slider.Slider.</span></span><span class="sig-name descname"><span class="pre">Slider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slideDirection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Orientation.Horizontal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animationType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Type.OutCubic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animationDuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrapAround</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.Slider" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Slider.Slider">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MangoUI.Slider.</span></span><span class="sig-name descname"><span class="pre">Slider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slideDirection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Orientation.Horizontal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animationType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Type.OutCubic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animationDuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrapAround</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt6.QtWidgets.QStackedWidget</span></code></p>
 <p>Widget that supports slide navigation between stacked widgets.</p>
 <dl class="field-list simple">
@@ -100,13 +96,13 @@ last slide.</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Slider.Slider.Slider.animationDoneSlot">
-<span class="sig-name descname"><span class="pre">animationDoneSlot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.Slider.animationDoneSlot" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Slider.Slider.animationDoneSlot">
+<span class="sig-name descname"><span class="pre">animationDoneSlot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.animationDoneSlot" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Slider.Slider.Slider.setAnimationDuration">
-<span class="sig-name descname"><span class="pre">setAnimationDuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">animationDuration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.Slider.setAnimationDuration" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Slider.Slider.setAnimationDuration">
+<span class="sig-name descname"><span class="pre">setAnimationDuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">animationDuration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.setAnimationDuration" title="Permalink to this definition"></a></dt>
 <dd><p>Set animation duration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -116,8 +112,8 @@ last slide.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Slider.Slider.Slider.setAnimationType">
-<span class="sig-name descname"><span class="pre">setAnimationType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">animationType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.Slider.setAnimationType" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Slider.Slider.setAnimationType">
+<span class="sig-name descname"><span class="pre">setAnimationType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">animationType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.setAnimationType" title="Permalink to this definition"></a></dt>
 <dd><p>Set sliding animation type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -127,8 +123,8 @@ last slide.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Slider.Slider.Slider.setSlideDirection">
-<span class="sig-name descname"><span class="pre">setSlideDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slideDirection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.Slider.setSlideDirection" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Slider.Slider.setSlideDirection">
+<span class="sig-name descname"><span class="pre">setSlideDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slideDirection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.setSlideDirection" title="Permalink to this definition"></a></dt>
 <dd><p>Set sliding animation direction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -138,8 +134,8 @@ last slide.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Slider.Slider.Slider.setWrapAround">
-<span class="sig-name descname"><span class="pre">setWrapAround</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrapAround</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.Slider.setWrapAround" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Slider.Slider.setWrapAround">
+<span class="sig-name descname"><span class="pre">setWrapAround</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrapAround</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.setWrapAround" title="Permalink to this definition"></a></dt>
 <dd><p>Set wrap around slides.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -149,20 +145,20 @@ last slide.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Slider.Slider.Slider.slideNext">
-<span class="sig-name descname"><span class="pre">slideNext</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.Slider.slideNext" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Slider.Slider.slideNext">
+<span class="sig-name descname"><span class="pre">slideNext</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.slideNext" title="Permalink to this definition"></a></dt>
 <dd><p>Move to next slide.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Slider.Slider.Slider.slidePrevious">
-<span class="sig-name descname"><span class="pre">slidePrevious</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.Slider.slidePrevious" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Slider.Slider.slidePrevious">
+<span class="sig-name descname"><span class="pre">slidePrevious</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.slidePrevious" title="Permalink to this definition"></a></dt>
 <dd><p>Move to previous slide.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Slider.Slider.Slider.slideToIndex">
-<span class="sig-name descname"><span class="pre">slideToIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.Slider.slideToIndex" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Slider.Slider.slideToIndex">
+<span class="sig-name descname"><span class="pre">slideToIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.slideToIndex" title="Permalink to this definition"></a></dt>
 <dd><p>Move to slide by index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -172,8 +168,8 @@ last slide.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="MangoUI.Slider.Slider.Slider.slideToWidget">
-<span class="sig-name descname"><span class="pre">slideToWidget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.Slider.slideToWidget" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="MangoUI.Slider.Slider.slideToWidget">
+<span class="sig-name descname"><span class="pre">slideToWidget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MangoUI.Slider.Slider.slideToWidget" title="Permalink to this definition"></a></dt>
 <dd><p>Slide to given widget.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
