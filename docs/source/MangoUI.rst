@@ -6,7 +6,7 @@ MangoUI
 
    Button
    Canvas
-   FlowLayout
    Slider
    TagBox
+   FlowLayout
    utils
