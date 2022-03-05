@@ -1,1 +1,1 @@
-from .Slider import Slider
+from .Slider import Slider  # noqa: F401

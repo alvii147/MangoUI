@@ -1,187 +1,220 @@
 from PyQt6.QtWidgets import QStackedWidget
-from PyQt6.QtCore import Qt, QEasingCurve, QPoint, pyqtSlot, QParallelAnimationGroup, QPropertyAnimation, QAbstractAnimation
+from PyQt6.QtCore import (
+    Qt,
+    QEasingCurve,
+    QPoint,
+    pyqtSlot,
+    QParallelAnimationGroup,
+    QPropertyAnimation,
+    QAbstractAnimation,
+)
+
 
 class Slider(QStackedWidget):
-    '''Slider an inherited class of QStackedWidget that supports slide navigation between stacked widgets.'''
+    """
+    Widget that supports slide navigation between stacked widgets.
+
+    Parameters
+    ----------
+    parent : QObject, optional
+        Parent object that contains this widget. Passing this ensures that
+        destroying the parent also destroys this widget.
+
+    slideDirection : Qt.Orientation.Horizontal
+        Sliding animation direction.
+
+    animationType : PyQt6.QtCore.Qt.QEasingCurve.Type
+        Sliding animation type.
+
+    animationDuration : int
+        Sliding animation duration in milliseconds.
+
+    wrapAround : bool
+        Wrap around slides. If set to true, the first slide returns after the
+        last slide.
+    """
+
     def __init__(
         self,
-        parent = None,
-        direction = Qt.Orientation.Horizontal,
-        duration = 500,
-        animationType = QEasingCurve.Type.OutCubic,
-        wrap = False,
+        parent=None,
+        slideDirection=Qt.Orientation.Horizontal,
+        animationType=QEasingCurve.Type.OutCubic,
+        animationDuration=500,
+        wrapAround=False,
     ):
-        '''Create new Slider object.
-
-        Parameters:
-            parent (QWidget obj/QLayout obj): Parent element
-            direction (Qt.Orientation obj): direction of animation
-            duration (int): animation during in milliseconds
-            animationType (QEasingCurve.Type obj): animation type
-            wrap (bool): wrap around slides
-
-        Returns:
-            Slider obj
-        '''
-
         if parent:
             super().__init__(parent)
         else:
             super().__init__()
 
-        self.direction = direction
-        self.duration = duration
+        self.slideDirection = slideDirection
         self.animationType = animationType
-        self.wrap = wrap
+        self.animationDuration = animationDuration
+        self.wrapAround = wrapAround
         self.currentSlide = 0
         self.nextSlide = 0
         self.currentPosition = QPoint(0, 0)
         self.active = False
 
-    def setDirection(self, direction):
-        '''Set direction of animation.
+    def setSlideDirection(self, slideDirection):
+        """
+        Set sliding animation direction.
 
-        Parameters:
-            direction (Qt.Orientation obj): direction of animation
+        Parameters
+        ----------
+        slideDirection : Qt.Orientation.Horizontal
+            Sliding animation direction.
+        """
 
-        Returns:
-            None
-        '''
-
-        self.direction = direction
-
-    def setDuration(self, duration):
-        '''Set animation duration.
-
-        Parameters:
-            duration (int): animation during in milliseconds
-
-        Returns:
-            None
-        '''
-
-        self.duration = duration
+        self.slideDirection = slideDirection
 
     def setAnimationType(self, animationType):
-        '''Set animation type.
+        """
+        Set sliding animation type.
 
-        Parameters:
-            animationType (QEasingCurve.Type obj): animation type
-
-        Returns:
-            None
-        '''
+        Parameters
+        ----------
+        animationType : PyQt6.QtCore.Qt.QEasingCurve.Type
+            Sliding animation type.
+        """
 
         self.animationType = animationType
 
-    def setWrap(self, wrap):
-        '''Set animation duration.
+    def setAnimationDuration(self, animationDuration):
+        """
+        Set animation duration.
 
-        Parameters:
-            wrap (bool): wrap around slides
+        Parameters
+        ----------
+        animationDuration : int
+            Sliding animation duration in milliseconds.
+        """
 
-        Returns:
-            None
-        '''
+        self.animationDuration = animationDuration
 
-        self.wrap = wrap
+    def setWrapAround(self, wrapAround):
+        """
+        Set wrap around slides.
+
+        Parameters
+        ----------
+        wrapAround : bool
+            Wrap around slides.
+        """
+
+        self.wrapAround = wrapAround
 
     @pyqtSlot()
     def slidePrevious(self):
-        '''Move to previous slide.
-
-        Returns:
-            None
-        '''
+        """
+        Move to previous slide.
+        """
 
         i = self.currentIndex()
-        if self.wrap or i > 0:
-            self.slideIndex(i - 1)
+        if self.wrapAround or i > 0:
+            self.slideToIndex(i - 1)
 
     @pyqtSlot()
     def slideNext(self):
-        '''Move to next slide.
-
-        Returns:
-            None
-        '''
+        """
+        Move to next slide.
+        """
 
         i = self.currentIndex()
-        if self.wrap or i < self.count() - 1:
-            self.slideIndex(i + 1)
+        if self.wrapAround or i < self.count() - 1:
+            self.slideToIndex(i + 1)
 
-    def slideIndex(self, index):
-        '''Move to slide by index.
+    def slideToIndex(self, idx):
+        """
+        Move to slide by index.
 
-        Parameters:
-            index (int): index position of slide
+        Parameters
+        ----------
+        idx : int
+            Slide index.
+        """
 
-        Returns:
-            None
-        '''
+        if idx > self.count() - 1:
+            idx = idx % self.count()
+        elif idx < 0:
+            idx = (idx + self.count()) % self.count()
 
-        if index > self.count() - 1:
-            index = index % self.count()
-        elif index < 0:
-            index = (index + self.count()) % self.count()
-        self.slideWidget(self.widget(index))
+        self.slideToWidget(self.widget(idx))
 
-    def slideWidget(self, widget):
+    def slideToWidget(self, widget):
+        """
+        Slide to given widget.
+
+        Parameters
+        ----------
+        widget : PyQt6.QtWidgets.QWidget
+            Widget to slide to.
+        """
+
         if self.active:
             return
 
         self.active = True
 
         i = self.currentIndex()
-        i_next = self.indexOf(widget)
+        iNext = self.indexOf(widget)
 
-        if i == i_next:
+        if i == iNext:
             self.active = False
             return
 
         offsetX = self.frameRect().width()
         offsetY = self.frameRect().height()
-        self.widget(i_next).setGeometry(self.frameRect())
+        self.widget(iNext).setGeometry(self.frameRect())
 
-        if self.direction == Qt.Orientation.Horizontal:
-            if i < i_next:
+        if self.slideDirection == Qt.Orientation.Horizontal:
+            if i < iNext:
                 offsetX = -offsetX
                 offsetY = 0
             else:
                 offsetY = 0
         else:
-            if i < i_next:
+            if i < iNext:
                 offsetX = 0
                 offsetY = -offsetY
             else:
                 offsetX = 0
 
         positionCurrent = self.widget(i).pos()
-        positionNext = self.widget(i_next).pos()
+        positionNext = self.widget(iNext).pos()
         self.currentPosition = positionCurrent
 
         offset = QPoint(offsetX, offsetY)
-        self.widget(i_next).move(positionNext - offset)
-        self.widget(i_next).show()
-        self.widget(i_next).raise_()
+        self.widget(iNext).move(positionNext - offset)
+        self.widget(iNext).show()
+        self.widget(iNext).raise_()
 
-        animationGroup = QParallelAnimationGroup(self, finished = self.animationDoneSlot)
+        animationGroup = QParallelAnimationGroup(
+            self,
+            finished=self.animationDoneSlot,
+        )
 
-        for index, start, end in zip((i, i_next), (positionCurrent, positionNext - offset), (positionCurrent + offset, positionNext)):
+        for idx, start, end in zip(
+            (i, iNext),
+            (positionCurrent, positionNext - offset),
+            (positionCurrent + offset, positionNext),
+        ):
             animation = QPropertyAnimation(
-                self.widget(index),
+                self.widget(idx),
                 b'pos',
-                duration = self.duration,
-                easingCurve = self.animationType,
-                startValue = start,
-                endValue = end,
+                startValue=start,
+                endValue=end,
+                easingCurve=self.animationType,
+                duration=self.animationDuration,
             )
             animationGroup.addAnimation(animation)
 
-        self.nextSlide = i_next
+        self.nextSlide = iNext
         self.currentSlide = i
         self.active = True
-        animationGroup.start(QAbstractAnimation.DeletionPolicy.DeleteWhenStopped)
+        animationGroup.start(
+            QAbstractAnimation.DeletionPolicy.DeleteWhenStopped
+        )
 
     @pyqtSlot()
     def animationDoneSlot(self):

@@ -1,1 +1,1 @@
-from .TagBox import TagBox
+from .TagBox import TagBox  # noqa: F401

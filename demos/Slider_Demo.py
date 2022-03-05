@@ -18,10 +18,10 @@ class Window(QMainWindow):
         self.vBoxLayout = QVBoxLayout()
 
         self.slider = Slider(
-            direction = Qt.Orientation.Horizontal,
-            duration = 750,
+            slideDirection = Qt.Orientation.Horizontal,
             animationType = QEasingCurve.Type.OutQuad,
-            wrap = False,
+            animationDuration = 750,
+            wrapAround = False,
         )
 
         self.label1 = QLabel()

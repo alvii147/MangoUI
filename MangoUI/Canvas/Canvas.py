@@ -1,41 +1,66 @@
 from PyQt6.QtWidgets import QLabel
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QColor, QPainter, QPen, QBrush, QPixmap
+from PyQt6.QtGui import QColor, QPainter, QPixmap
 from MangoUI.utils.ColorOps import to_RGBAtuple
 
+
 class Canvas(QLabel):
-    '''Canvas an inherited class of QLabel with a null QPixmap. Using QPainter, Canvas allows the user to draw on the window.'''
+    """
+    Canvas widget for drawing.
+
+    Parameters
+    ----------
+    parent : QObject, optional
+        Parent object that contains this widget. Passing this ensures that
+        destroying the parent also destroys this widget.
+
+    width : int
+        Canvas height.
+
+    height : int
+        Canvas height.
+
+    canvasColor : int, tuple, str or PyQt6.QtGui.QColor
+        Canvas background color, as a 32-bit integer representing RGBA, tuple
+        of floats representing RGBA values, HTML RGBA string, HTML hexadecimal
+        string, or QColor object.
+
+    penColor : int, tuple, str or PyQt6.QtGui.QColor
+        Pen color, as a 32-bit integer representing RGBA, tuple of floats
+        representing RGBA values, HTML RGBA string, HTML hexadecimal string, or
+        QColor object.
+
+    strokeStyle : PyQt6.QtCore.Qt.QPenStyle
+        Pen stroke style.
+
+    strokeWidth : int
+        Pen stroke width.
+
+    borderStyle : str
+        Border style of canvas.
+
+    borderColor : int, tuple, str or PyQt6.QtGui.QColor
+        Border color of canvas. as a 32-bit integer representing RGBA, tuple of
+        floats representing RGBA values, HTML RGBA string, HTML hexadecimal
+        string, or QColor object.
+
+    borderWidth : int
+        Border width of canvas in pixels.
+    """
+
     def __init__(
         self,
-        parent = None,
-        width = 200,
-        height = 200,
-        penColor = (25, 25, 25, 255),
-        canvasColor = (255, 247, 242, 255),
-        strokeStyle = Qt.PenStyle.SolidLine,
-        strokeWidth = 3,
-        borderStyle = 'solid',
-        borderColor = (0, 0, 0, 255),
-        borderWidth = 1,
+        parent=None,
+        width=200,
+        height=200,
+        canvasColor=(255, 247, 242, 255),
+        penColor=(25, 25, 25, 255),
+        strokeStyle=Qt.PenStyle.SolidLine,
+        strokeWidth=3,
+        borderStyle='solid',
+        borderColor=(0, 0, 0, 255),
+        borderWidth=1,
     ):
-        '''Create new Canvas object.
-
-        Parameters:
-            parent (QWidget obj/QLayout obj): parent element
-            width (int): width of canvas
-            height (int): height of canvas
-            penColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): pen color
-            canvasColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): background color of canvas
-            strokeStyle (QPenStyle obj): line style of pen stroke
-            strokeWidth (int): width of pen stroke
-            borderStyle (str): border style
-            borderColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): border color of canvas
-            borderWidth (int): border width
-
-        Returns:
-            Canvas obj
-        '''
-
         if parent:
             super().__init__(parent)
         else:
@@ -44,117 +69,183 @@ class Canvas(QLabel):
         self.width = width
         self.height = height
 
-        self.color = penColor
         self.backgroundColor = canvasColor
-    
+
+        self.penColor = penColor
         self.strokeStyle = strokeStyle
         self.strokeWidth = strokeWidth
 
         self.borderStyle = borderStyle
-        self.borderColor = borderColor
+        self.borderColor = to_RGBAtuple(borderColor)
         self.borderWidth = borderWidth
 
         self.xCache = None
         self.yCache = None
+
         self.setFixedSize(self.width, self.height)
         self.setupPixmap()
         self.renderStyleSheet()
 
-    def mouseMoveEvent(self, event):
-        if self.xCache == None:
-            self.xCache = event.position().x()
-            self.yCache = event.position().y()
-        else:
-            painter = QPainter(self.canvas)
-            pen = painter.pen()
-            pen.setWidth(self.strokeWidth)
-            pen.setColor(QColor(*self.color))
-            pen.setStyle(self.strokeStyle)
-            painter.setPen(pen)
-            painter.drawLine(self.xCache, self.yCache, event.position().x(), event.position().y())
-            painter.end()
-            self.setPixmap(self.canvas)
-            self.xCache = event.position().x()
-            self.yCache = event.position().y()
-
-    def mouseReleaseEvent(self, event):
-        self.xCache = None
-        self.yCache = None
-
-    def setupPixmap(self):
-        self.canvas = QPixmap(self.width, self.height)
-        self.canvas.fill(QColor(*self.backgroundColor))
-        self.setPixmap(self.canvas)
-
     def renderStyleSheet(self):
-        self.styleSheet = f'''
+        """
+        Set QSS style sheet for widget using defined attributes.
+        """
+
+        self.styleSheet = f"""
             QLabel {{
                 border-style: {str(self.borderStyle)};
                 border-color: rgba{to_RGBAtuple(self.borderColor)};
                 border-width: {str(self.borderWidth)}px;
             }}
-        '''
+        """
         self.setStyleSheet(self.styleSheet)
 
+    def mouseMoveEvent(self, event):
+        """
+        Override mouse move event signal to draw on canvas.
+
+        Parameters
+        ----------
+        event : PyQt6.QtGui.QMouseEvent
+            Event passed to base method.
+        """
+
+        if self.xCache is None:
+            self.xCache = event.position().x()
+            self.yCache = event.position().y()
+        else:
+            painter = QPainter(self.canvas)
+
+            pen = painter.pen()
+            pen.setWidth(self.strokeWidth)
+            pen.setColor(QColor(*self.penColor))
+            pen.setStyle(self.strokeStyle)
+            painter.setPen(pen)
+
+            painter.drawLine(
+                self.xCache,
+                self.yCache,
+                event.position().x(),
+                event.position().y(),
+            )
+            painter.end()
+
+            self.setPixmap(self.canvas)
+            self.xCache = event.position().x()
+            self.yCache = event.position().y()
+
+    def mouseReleaseEvent(self, event):
+        """
+        Override mouse release event signal to draw on canvas.
+
+        Parameters
+        ----------
+        event : PyQt6.QtGui.QMouseEvent
+            Event passed to base method.
+        """
+
+        self.xCache = None
+        self.yCache = None
+
+    def setupPixmap(self):
+        """
+        Create and set new pixmap.
+        """
+
+        self.canvas = QPixmap(self.width, self.height)
+        self.canvas.fill(QColor(*self.backgroundColor))
+        self.setPixmap(self.canvas)
+
     def resize(self, width, height):
-        ret = super().resize(width, height)
+        """
+        Override resize method to set up new pixmap everytime the window is
+        resized.
+
+        Parameters
+        ----------
+        width : int
+            Widget width.
+
+        height : int
+            Widget height.
+        """
+
+        super().resize(width, height)
         self.setupPixmap()
-        return ret
 
-    def setPenColor(self, color):
-        '''Set pen color.
+    def setPen(self, penColor=None, strokeStyle=None, strokeWidth=None):
+        """
+        Set pen properties.
 
-        Parameters:
-            color (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): pen color
+        Parameters
+        ----------
+        penColor : int, tuple, str or PyQt6.QtGui.QColor
+            Pen color, as a 32-bit integer representing RGBA, tuple of floats
+            representing RGBA values, HTML RGBA string, HTML hexadecimal
+            string, or QColor object.
 
-        Returns:
-            None
-        '''
+        strokeStyle : PyQt6.QtCore.Qt.QPenStyle
+            Pen stroke style.
 
-        self.color = to_RGBAtuple(color)
+        strokeWidth : int
+            Pen stroke width.
+        """
 
-    def setBorder(self, borderStyle = None, borderColor = None, borderWidth = None):
-        '''Set canvas border properties.
+        if penColor is not None:
+            self.penColor = to_RGBAtuple(penColor)
 
-        Parameters:
-            borderStyle (str): border style
-            borderColor (QColor obj/RGBA tuple/RGBA 32-bit unsigned int/RGBA str/HEX str): border color of canvas
-            borderWidth (int): border width
+        if strokeStyle is not None:
+            self.strokeStyle = strokeStyle
 
-        Returns:
-            None
-        '''
+        if strokeWidth is not None:
+            self.strokeWidth = strokeWidth
 
-        if borderStyle != None:
+    def setBorder(self, borderStyle=None, borderColor=None, borderWidth=None):
+        """
+        Set canvas border properties.
+
+        Parameters
+        ----------
+        borderStyle : str
+            Border style of canvas.
+
+        borderColor : int, tuple, str or PyQt6.QtGui.QColor
+            Border color of canvas. as a 32-bit integer representing RGBA,
+            tuple of floats representing RGBA values, HTML RGBA string, HTML
+            hexadecimal string, or QColor object.
+
+        borderWidth : int
+            Border width of canvas in pixels.
+        """
+
+        if borderStyle is not None:
             self.borderStyle = borderStyle
 
-        if borderColor != None:
-            self.borderColor = borderColor
+        if borderColor is not None:
+            self.borderColor = to_RGBAtuple(borderColor)
 
-        if borderWidth != None:
+        if borderWidth is not None:
             self.borderWidth = borderWidth
 
         self.renderStyleSheet()
 
     def saveCanvas(self, dest):
-        '''Save canvas content to image file.
+        """
+        Save canvas content to image file.
 
-        Parameters:
-            dest (str):  image file destination path
-
-        Returns:
-            None
-        '''
+        Parameters
+        ----------
+        dest : str or PyQt6.QtCore.QIODevice
+            Image file destination path.
+        """
 
         pixmap = self.pixmap()
         pixmap.save(dest)
 
     def clearCanvas(self):
-        '''Clear canvas content.
-
-        Returns:
-            None
-        '''
+        """
+        Clear canvas contents.
+        """
 
         pixmap = self.pixmap()
         pixmap.fill(QColor(*self.backgroundColor))
